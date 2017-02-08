@@ -197,6 +197,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="list.png" id="KAD-aa-ydP"/>
+                    <connections>
+                        <outlet property="tableView" destination="umi-fz-NiE" id="wMM-4j-ann"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1Y-Wu-Vlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
