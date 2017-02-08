@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		502B3F921E4A9EFE009EF4E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */; };
+		502B3F941E4A9EFE009EF4E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */; };
+		502B3F971E4A9EFE009EF4E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B3F951E4A9EFE009EF4E3 /* Main.storyboard */; };
+		502B3F991E4A9EFE009EF4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 502B3F981E4A9EFE009EF4E3 /* Assets.xcassets */; };
+		502B3F9C1E4A9EFE009EF4E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B3F9A1E4A9EFE009EF4E3 /* LaunchScreen.storyboard */; };
+		502B3FA41E4AA05F009EF4E3 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */; };
+		502B3FB71E4AA538009EF4E3 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FA51E4AA538009EF4E3 /* placeholder.png */; };
+		502B3FB81E4AA538009EF4E3 /* map-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FA61E4AA538009EF4E3 /* map-location.png */; };
+		502B3FB91E4AA538009EF4E3 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FA71E4AA538009EF4E3 /* list.png */; };
+		502B3FBA1E4AA538009EF4E3 /* udacitylogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FA81E4AA538009EF4E3 /* udacitylogo.png */; };
+		502B3FBB1E4AA538009EF4E3 /* OnTheMap_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FA91E4AA538009EF4E3 /* OnTheMap_29.png */; };
+		502B3FBC1E4AA538009EF4E3 /* OnTheMap_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAA1E4AA538009EF4E3 /* OnTheMap_40.png */; };
+		502B3FBD1E4AA538009EF4E3 /* OnTheMap_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAB1E4AA538009EF4E3 /* OnTheMap_58.png */; };
+		502B3FBE1E4AA538009EF4E3 /* OnTheMap_76.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAC1E4AA538009EF4E3 /* OnTheMap_76.png */; };
+		502B3FBF1E4AA538009EF4E3 /* OnTheMap_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAD1E4AA538009EF4E3 /* OnTheMap_80.png */; };
+		502B3FC01E4AA538009EF4E3 /* OnTheMap_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAE1E4AA538009EF4E3 /* OnTheMap_120.png */; };
+		502B3FC11E4AA538009EF4E3 /* OnTheMap_152.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FAF1E4AA538009EF4E3 /* OnTheMap_152.png */; };
+		502B3FC21E4AA538009EF4E3 /* OnTheMap_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB01E4AA538009EF4E3 /* OnTheMap_180.png */; };
+		502B3FC31E4AA538009EF4E3 /* OnTheMap_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB11E4AA538009EF4E3 /* OnTheMap_512.png */; };
+		502B3FC41E4AA538009EF4E3 /* OnTheMap_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB21E4AA538009EF4E3 /* OnTheMap_1024.png */; };
+		502B3FC51E4AA538009EF4E3 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB31E4AA538009EF4E3 /* Roboto-Medium.ttf */; };
+		502B3FC61E4AA538009EF4E3 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB41E4AA538009EF4E3 /* Roboto-Regular.ttf */; };
+		502B3FC71E4AA538009EF4E3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */; };
+		502B3FC81E4AA538009EF4E3 /* udacity.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB61E4AA538009EF4E3 /* udacity.pdf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		502B3F8E1E4A9EFE009EF4E3 /* OnTheMap2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		502B3F961E4A9EFE009EF4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		502B3F981E4A9EFE009EF4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		502B3F9B1E4A9EFE009EF4E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		502B3F9D1E4A9EFE009EF4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		502B3FA51E4AA538009EF4E3 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		502B3FA61E4AA538009EF4E3 /* map-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-location.png"; sourceTree = "<group>"; };
+		502B3FA71E4AA538009EF4E3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		502B3FA81E4AA538009EF4E3 /* udacitylogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = udacitylogo.png; sourceTree = "<group>"; };
+		502B3FA91E4AA538009EF4E3 /* OnTheMap_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_29.png; sourceTree = "<group>"; };
+		502B3FAA1E4AA538009EF4E3 /* OnTheMap_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_40.png; sourceTree = "<group>"; };
+		502B3FAB1E4AA538009EF4E3 /* OnTheMap_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_58.png; sourceTree = "<group>"; };
+		502B3FAC1E4AA538009EF4E3 /* OnTheMap_76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_76.png; sourceTree = "<group>"; };
+		502B3FAD1E4AA538009EF4E3 /* OnTheMap_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_80.png; sourceTree = "<group>"; };
+		502B3FAE1E4AA538009EF4E3 /* OnTheMap_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_120.png; sourceTree = "<group>"; };
+		502B3FAF1E4AA538009EF4E3 /* OnTheMap_152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_152.png; sourceTree = "<group>"; };
+		502B3FB01E4AA538009EF4E3 /* OnTheMap_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_180.png; sourceTree = "<group>"; };
+		502B3FB11E4AA538009EF4E3 /* OnTheMap_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_512.png; sourceTree = "<group>"; };
+		502B3FB21E4AA538009EF4E3 /* OnTheMap_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OnTheMap_1024.png; sourceTree = "<group>"; };
+		502B3FB31E4AA538009EF4E3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		502B3FB41E4AA538009EF4E3 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		502B3FB61E4AA538009EF4E3 /* udacity.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = udacity.pdf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		502B3F8B1E4A9EFE009EF4E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		502B3F851E4A9EFE009EF4E3 = {
+			isa = PBXGroup;
+			children = (
+				502B3F901E4A9EFE009EF4E3 /* OnTheMap2 */,
+				502B3F8F1E4A9EFE009EF4E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		502B3F8F1E4A9EFE009EF4E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				502B3F8E1E4A9EFE009EF4E3 /* OnTheMap2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		502B3F901E4A9EFE009EF4E3 /* OnTheMap2 */ = {
+			isa = PBXGroup;
+			children = (
+				502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */,
+				502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */,
+				502B3F951E4A9EFE009EF4E3 /* Main.storyboard */,
+				502B3F981E4A9EFE009EF4E3 /* Assets.xcassets */,
+				502B3F9A1E4A9EFE009EF4E3 /* LaunchScreen.storyboard */,
+				502B3F9D1E4A9EFE009EF4E3 /* Info.plist */,
+				502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */,
+				502B3FA51E4AA538009EF4E3 /* placeholder.png */,
+				502B3FA61E4AA538009EF4E3 /* map-location.png */,
+				502B3FA71E4AA538009EF4E3 /* list.png */,
+				502B3FA81E4AA538009EF4E3 /* udacitylogo.png */,
+				502B3FA91E4AA538009EF4E3 /* OnTheMap_29.png */,
+				502B3FAA1E4AA538009EF4E3 /* OnTheMap_40.png */,
+				502B3FAB1E4AA538009EF4E3 /* OnTheMap_58.png */,
+				502B3FAC1E4AA538009EF4E3 /* OnTheMap_76.png */,
+				502B3FAD1E4AA538009EF4E3 /* OnTheMap_80.png */,
+				502B3FAE1E4AA538009EF4E3 /* OnTheMap_120.png */,
+				502B3FAF1E4AA538009EF4E3 /* OnTheMap_152.png */,
+				502B3FB01E4AA538009EF4E3 /* OnTheMap_180.png */,
+				502B3FB11E4AA538009EF4E3 /* OnTheMap_512.png */,
+				502B3FB21E4AA538009EF4E3 /* OnTheMap_1024.png */,
+				502B3FB31E4AA538009EF4E3 /* Roboto-Medium.ttf */,
+				502B3FB41E4AA538009EF4E3 /* Roboto-Regular.ttf */,
+				502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */,
+				502B3FB61E4AA538009EF4E3 /* udacity.pdf */,
+			);
+			path = OnTheMap2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		502B3F8D1E4A9EFE009EF4E3 /* OnTheMap2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 502B3FA01E4A9EFE009EF4E3 /* Build configuration list for PBXNativeTarget "OnTheMap2" */;
+			buildPhases = (
+				502B3F8A1E4A9EFE009EF4E3 /* Sources */,
+				502B3F8B1E4A9EFE009EF4E3 /* Frameworks */,
+				502B3F8C1E4A9EFE009EF4E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnTheMap2;
+			productName = OnTheMap2;
+			productReference = 502B3F8E1E4A9EFE009EF4E3 /* OnTheMap2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		502B3F861E4A9EFE009EF4E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Deborah;
+				TargetAttributes = {
+					502B3F8D1E4A9EFE009EF4E3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4J6N8TR2LN;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 502B3F891E4A9EFE009EF4E3 /* Build configuration list for PBXProject "OnTheMap2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 502B3F851E4A9EFE009EF4E3;
+			productRefGroup = 502B3F8F1E4A9EFE009EF4E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				502B3F8D1E4A9EFE009EF4E3 /* OnTheMap2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		502B3F8C1E4A9EFE009EF4E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B3FBD1E4AA538009EF4E3 /* OnTheMap_58.png in Resources */,
+				502B3FBF1E4AA538009EF4E3 /* OnTheMap_80.png in Resources */,
+				502B3FBB1E4AA538009EF4E3 /* OnTheMap_29.png in Resources */,
+				502B3F9C1E4A9EFE009EF4E3 /* LaunchScreen.storyboard in Resources */,
+				502B3FB71E4AA538009EF4E3 /* placeholder.png in Resources */,
+				502B3FBE1E4AA538009EF4E3 /* OnTheMap_76.png in Resources */,
+				502B3FC31E4AA538009EF4E3 /* OnTheMap_512.png in Resources */,
+				502B3FBA1E4AA538009EF4E3 /* udacitylogo.png in Resources */,
+				502B3FC71E4AA538009EF4E3 /* Roboto-Thin.ttf in Resources */,
+				502B3FC51E4AA538009EF4E3 /* Roboto-Medium.ttf in Resources */,
+				502B3FC01E4AA538009EF4E3 /* OnTheMap_120.png in Resources */,
+				502B3FC11E4AA538009EF4E3 /* OnTheMap_152.png in Resources */,
+				502B3FC81E4AA538009EF4E3 /* udacity.pdf in Resources */,
+				502B3FBC1E4AA538009EF4E3 /* OnTheMap_40.png in Resources */,
+				502B3FC21E4AA538009EF4E3 /* OnTheMap_180.png in Resources */,
+				502B3FC41E4AA538009EF4E3 /* OnTheMap_1024.png in Resources */,
+				502B3F991E4A9EFE009EF4E3 /* Assets.xcassets in Resources */,
+				502B3FC61E4AA538009EF4E3 /* Roboto-Regular.ttf in Resources */,
+				502B3FB81E4AA538009EF4E3 /* map-location.png in Resources */,
+				502B3F971E4A9EFE009EF4E3 /* Main.storyboard in Resources */,
+				502B3FB91E4AA538009EF4E3 /* list.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		502B3F8A1E4A9EFE009EF4E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B3FA41E4AA05F009EF4E3 /* SignupViewController.swift in Sources */,
+				502B3F941E4A9EFE009EF4E3 /* LoginViewController.swift in Sources */,
+				502B3F921E4A9EFE009EF4E3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		502B3F951E4A9EFE009EF4E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502B3F961E4A9EFE009EF4E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		502B3F9A1E4A9EFE009EF4E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502B3F9B1E4A9EFE009EF4E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		502B3F9E1E4A9EFE009EF4E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		502B3F9F1E4A9EFE009EF4E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		502B3FA11E4A9EFE009EF4E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4J6N8TR2LN;
+				INFOPLIST_FILE = OnTheMap2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Deborah.OnTheMap2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		502B3FA21E4A9EFE009EF4E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4J6N8TR2LN;
+				INFOPLIST_FILE = OnTheMap2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Deborah.OnTheMap2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		502B3F891E4A9EFE009EF4E3 /* Build configuration list for PBXProject "OnTheMap2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502B3F9E1E4A9EFE009EF4E3 /* Debug */,
+				502B3F9F1E4A9EFE009EF4E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		502B3FA01E4A9EFE009EF4E3 /* Build configuration list for PBXNativeTarget "OnTheMap2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502B3FA11E4A9EFE009EF4E3 /* Debug */,
+				502B3FA21E4A9EFE009EF4E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 502B3F861E4A9EFE009EF4E3 /* Project object */;
+}
