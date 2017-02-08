@@ -26,9 +26,12 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButton(_ sender: Any) {
-    
+    dismissKeyboard()
+    guard let username = usernameField.text, let password = passwordField.text else {
+    return
     }
-    
+    }
+
     let spinner = showSpinner()
     UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
     spinner.hide()

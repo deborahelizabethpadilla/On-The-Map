@@ -42,6 +42,8 @@
 		502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */; };
 		502B3FE01E4AA87B009EF4E3 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */; };
 		502B3FE21E4AA883009EF4E3 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FE11E4AA883009EF4E3 /* ParseAPI.swift */; };
+		502B3FE51E4ACF3C009EF4E3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */; };
+		502B3FE61E4ACF3C009EF4E3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityAPI.swift; sourceTree = "<group>"; };
 		502B3FE11E4AA883009EF4E3 /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
+		502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */,
+				502B3FE51E4ACF3C009EF4E3 /* FBSDKCoreKit.framework in Frameworks */,
+				502B3FE61E4ACF3C009EF4E3 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +128,14 @@
 				502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */,
 				502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */,
 				502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */,
-				502B3FCD1E4AA7B6009EF4E3 /* Extra Additions.swift */,
+				502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */,
 				502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */,
 				502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */,
 				502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */,
 				502B3FD51E4AA7EC009EF4E3 /* StudentInfo.swift */,
 				502B3FD71E4AA7FF009EF4E3 /* StudentInfoController.swift */,
 				502B3FD91E4AA80C009EF4E3 /* Users.swift */,
-				502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */,
+				502B3FCD1E4AA7B6009EF4E3 /* Extra Additions.swift */,
 			);
 			name = "Controller Files";
 			path = OnTheMap2;
@@ -184,6 +190,8 @@
 		502B3FCC1E4AA798009EF4E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */,
+				502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */,
 				502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -414,6 +422,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4J6N8TR2LN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTheMap2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Deborah.OnTheMap2;
@@ -427,6 +439,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4J6N8TR2LN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTheMap2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Deborah.OnTheMap2;
