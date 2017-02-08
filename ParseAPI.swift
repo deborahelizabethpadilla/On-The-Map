@@ -8,9 +8,9 @@
 
 import Foundation
 
-let StudentLocationFailed = "StudentLocationFailed"
+    let StudentLocationFailed = "StudentLocationFailed"
 
-struct ParseAPI {
+    struct ParseAPI {
     
     static let url = URL(string: "https://api.parse.com/1/classes/StudentLocation")
     static let session = URLSession.shared
@@ -65,7 +65,7 @@ struct ParseAPI {
         
     }
     
-    static func postUserLocation(_ completion: RequestCompletionHandler?) {
+    static func postLocation(_ completion: RequestCompletionHandler?) {
         
     let urlString = "https://parse.udacity.com/parse/classes/StudentLocation/8ZExGR5uX8"
     let url = URL(string: urlString)

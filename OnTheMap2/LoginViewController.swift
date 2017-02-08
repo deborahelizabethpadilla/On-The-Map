@@ -30,9 +30,9 @@ class LoginViewController: UIViewController {
     guard let username = usernameField.text, let password = passwordField.text else {
     return
     }
-    }
+    
 
-    let spinner = showSpinner()
+    let loginKey = loginKey()
     UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
     spinner.hide()
     
@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
     
     }
     
+    
     if let error = error {
     if error.code == NSURLErrorNotConnectedToInternet {
     
@@ -52,11 +53,12 @@ class LoginViewController: UIViewController {
     self.presentAlert("Not Working!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
     }
     
+    
     } else {
     do {
     if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
     if let accountDict = json["account"] as? [String:AnyObject] {
-    User.uniqueKey = accountDict["key"] as! String
+    Users.uniqueKey = accountDict["key"] as! String
     DispatchQueue.main.async(execute: {
     
     if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
@@ -74,16 +76,6 @@ class LoginViewController: UIViewController {
     }
     }
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    dismissKeyboard()
-    return false
     }
-    func tapOutKeyboard() {
-    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
-    view.addGestureRecognizer(tap)
     }
-    
-    }
-
     }

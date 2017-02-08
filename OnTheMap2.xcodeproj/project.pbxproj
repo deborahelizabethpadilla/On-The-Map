@@ -42,8 +42,6 @@
 		502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */; };
 		502B3FE01E4AA87B009EF4E3 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */; };
 		502B3FE21E4AA883009EF4E3 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FE11E4AA883009EF4E3 /* ParseAPI.swift */; };
-		502B3FE51E4ACF3C009EF4E3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */; };
-		502B3FE61E4ACF3C009EF4E3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,8 +82,6 @@
 		502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityAPI.swift; sourceTree = "<group>"; };
 		502B3FE11E4AA883009EF4E3 /* ParseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseAPI.swift; sourceTree = "<group>"; };
-		502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +90,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */,
-				502B3FE51E4ACF3C009EF4E3 /* FBSDKCoreKit.framework in Frameworks */,
-				502B3FE61E4ACF3C009EF4E3 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +184,6 @@
 		502B3FCC1E4AA798009EF4E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				502B3FE31E4ACF3C009EF4E3 /* FBSDKCoreKit.framework */,
-				502B3FE41E4ACF3C009EF4E3 /* FBSDKLoginKit.framework */,
 				502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */,
 			);
 			name = Frameworks;
