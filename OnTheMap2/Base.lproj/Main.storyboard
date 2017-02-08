@@ -208,7 +208,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1NF-Dw-mhz">
             <objects>
-                <tabBarController id="RDW-TZ-vAu" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="TabBarViewController" storyboardIdentifier="TabBarViewController" id="RDW-TZ-vAu" customClass="TabBarController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="d0W-p3-sq8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -228,8 +228,8 @@
         <!--Navigation Controller-->
         <scene sceneID="NMq-eN-moN">
             <objects>
-                <navigationController id="6Zs-5b-mFP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YJd-5W-ier">
+                <navigationController restorationIdentifier="UINavigationController" id="6Zs-5b-mFP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJd-5W-ier">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
