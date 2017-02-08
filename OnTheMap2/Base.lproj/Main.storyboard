@@ -76,10 +76,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="map-location.png" id="daK-Ue-e7u"/>
+                    <connections>
+                        <outlet property="mapView" destination="Egq-rO-Eoh" id="qQ3-qG-HQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnC-Yi-tJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="429.53523238380814"/>
+            <point key="canvasLocation" x="633" y="99"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Kwd-pa-BTC">
