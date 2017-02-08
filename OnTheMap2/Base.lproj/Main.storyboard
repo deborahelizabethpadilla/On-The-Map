@@ -87,7 +87,7 @@
         <!--Info View Controller-->
         <scene sceneID="Kwd-pa-BTC">
             <objects>
-                <viewController id="ahG-sh-N4N" customClass="InfoViewController" sceneMemberID="viewController">
+                <viewController id="ahG-sh-N4N" customClass="InfoViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WxC-Rd-EvA"/>
                         <viewControllerLayoutGuide type="bottom" id="mKQ-V9-s0r"/>
@@ -139,6 +139,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="2lb-qL-IEi" id="P7a-z1-ADT"/>
+                        <outlet property="label" destination="DSu-fN-taW" id="6U6-fx-Ly3"/>
+                        <outlet property="linktext" destination="7pB-HS-LLm" id="tPg-9k-Kt4"/>
+                        <outlet property="locationtext" destination="LSP-5w-eMb" id="VQS-7T-T8B"/>
+                        <outlet property="mapinfoView" destination="cv5-pX-MIU" id="F70-FC-NGi"/>
+                        <outlet property="onthemapButton" destination="A2s-uk-F9P" id="ysd-ub-usH"/>
+                        <outlet property="submitButton" destination="USe-vZ-hlo" id="xWU-Ma-keW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdH-vB-2on" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,7 +200,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1Y-Wu-Vlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="1103.2983508245877"/>
+            <point key="canvasLocation" x="742" y="842"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1NF-Dw-mhz">
