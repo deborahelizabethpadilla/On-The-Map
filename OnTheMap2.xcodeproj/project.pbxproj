@@ -31,6 +31,15 @@
 		502B3FC61E4AA538009EF4E3 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB41E4AA538009EF4E3 /* Roboto-Regular.ttf */; };
 		502B3FC71E4AA538009EF4E3 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */; };
 		502B3FC81E4AA538009EF4E3 /* udacity.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 502B3FB61E4AA538009EF4E3 /* udacity.pdf */; };
+		502B3FCE1E4AA7B6009EF4E3 /* Extra Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FCD1E4AA7B6009EF4E3 /* Extra Additions.swift */; };
+		502B3FD01E4AA7C6009EF4E3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */; };
+		502B3FD21E4AA7D5009EF4E3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */; };
+		502B3FD41E4AA7E1009EF4E3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */; };
+		502B3FD61E4AA7EC009EF4E3 /* StudentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD51E4AA7EC009EF4E3 /* StudentInfo.swift */; };
+		502B3FD81E4AA7FF009EF4E3 /* StudentInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD71E4AA7FF009EF4E3 /* StudentInfoController.swift */; };
+		502B3FDA1E4AA80C009EF4E3 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD91E4AA80C009EF4E3 /* Users.swift */; };
+		502B3FDC1E4AA820009EF4E3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDB1E4AA820009EF4E3 /* TabBarViewController.swift */; };
+		502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +69,15 @@
 		502B3FB41E4AA538009EF4E3 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		502B3FB61E4AA538009EF4E3 /* udacity.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = udacity.pdf; sourceTree = "<group>"; };
+		502B3FCD1E4AA7B6009EF4E3 /* Extra Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extra Additions.swift"; sourceTree = "<group>"; };
+		502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		502B3FD51E4AA7EC009EF4E3 /* StudentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfo.swift; sourceTree = "<group>"; };
+		502B3FD71E4AA7FF009EF4E3 /* StudentInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoController.swift; sourceTree = "<group>"; };
+		502B3FD91E4AA80C009EF4E3 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		502B3FDB1E4AA820009EF4E3 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +95,11 @@
 		502B3F851E4A9EFE009EF4E3 = {
 			isa = PBXGroup;
 			children = (
-				502B3F901E4A9EFE009EF4E3 /* OnTheMap2 */,
+				502B3F901E4A9EFE009EF4E3 /* Controller Files */,
+				502B3FCC1E4AA798009EF4E3 /* Frameworks */,
+				502B3FCA1E4AA774009EF4E3 /* Application Networks */,
+				502B3FC91E4AA73A009EF4E3 /* Assets */,
+				502B3FCB1E4AA785009EF4E3 /* Supporting Files */,
 				502B3F8F1E4A9EFE009EF4E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,16 +112,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		502B3F901E4A9EFE009EF4E3 /* OnTheMap2 */ = {
+		502B3F901E4A9EFE009EF4E3 /* Controller Files */ = {
 			isa = PBXGroup;
 			children = (
 				502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */,
 				502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */,
-				502B3F951E4A9EFE009EF4E3 /* Main.storyboard */,
-				502B3F981E4A9EFE009EF4E3 /* Assets.xcassets */,
-				502B3F9A1E4A9EFE009EF4E3 /* LaunchScreen.storyboard */,
 				502B3F9D1E4A9EFE009EF4E3 /* Info.plist */,
 				502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */,
+				502B3FCD1E4AA7B6009EF4E3 /* Extra Additions.swift */,
+				502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */,
+				502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */,
+				502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */,
+				502B3FD51E4AA7EC009EF4E3 /* StudentInfo.swift */,
+				502B3FD71E4AA7FF009EF4E3 /* StudentInfoController.swift */,
+				502B3FD91E4AA80C009EF4E3 /* Users.swift */,
+				502B3FDB1E4AA820009EF4E3 /* TabBarViewController.swift */,
+			);
+			name = "Controller Files";
+			path = OnTheMap2;
+			sourceTree = "<group>";
+		};
+		502B3FC91E4AA73A009EF4E3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				502B3F951E4A9EFE009EF4E3 /* Main.storyboard */,
+				502B3F9A1E4A9EFE009EF4E3 /* LaunchScreen.storyboard */,
+				502B3F981E4A9EFE009EF4E3 /* Assets.xcassets */,
 				502B3FA51E4AA538009EF4E3 /* placeholder.png */,
 				502B3FA61E4AA538009EF4E3 /* map-location.png */,
 				502B3FA71E4AA538009EF4E3 /* list.png */,
@@ -118,7 +157,30 @@
 				502B3FB51E4AA538009EF4E3 /* Roboto-Thin.ttf */,
 				502B3FB61E4AA538009EF4E3 /* udacity.pdf */,
 			);
+			name = Assets;
 			path = OnTheMap2;
+			sourceTree = "<group>";
+		};
+		502B3FCA1E4AA774009EF4E3 /* Application Networks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Application Networks";
+			sourceTree = "<group>";
+		};
+		502B3FCB1E4AA785009EF4E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		502B3FCC1E4AA798009EF4E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,8 +275,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				502B3FA41E4AA05F009EF4E3 /* SignupViewController.swift in Sources */,
+				502B3FD21E4AA7D5009EF4E3 /* TableViewController.swift in Sources */,
+				502B3FDC1E4AA820009EF4E3 /* TabBarViewController.swift in Sources */,
+				502B3FDA1E4AA80C009EF4E3 /* Users.swift in Sources */,
 				502B3F941E4A9EFE009EF4E3 /* LoginViewController.swift in Sources */,
+				502B3FD81E4AA7FF009EF4E3 /* StudentInfoController.swift in Sources */,
+				502B3FD41E4AA7E1009EF4E3 /* InfoViewController.swift in Sources */,
 				502B3F921E4A9EFE009EF4E3 /* AppDelegate.swift in Sources */,
+				502B3FD01E4AA7C6009EF4E3 /* MapViewController.swift in Sources */,
+				502B3FCE1E4AA7B6009EF4E3 /* Extra Additions.swift in Sources */,
+				502B3FD61E4AA7EC009EF4E3 /* StudentInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
