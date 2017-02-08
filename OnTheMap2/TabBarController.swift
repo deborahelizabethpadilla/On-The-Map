@@ -33,15 +33,7 @@ class TabBarController: UITabBarController {
         
     retrieveUserData()
     UdacityAPI.getPublicData()
-        
-    UdacityAPI.session.dataTask(with: url) { (data, response, error) in
-    if let error = Error {
-    self.presentAlert(error)
-            
-    }
-    }
     
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
