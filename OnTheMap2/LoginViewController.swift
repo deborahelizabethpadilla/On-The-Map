@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
 
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -17,65 +18,48 @@ class LoginViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     @IBAction func signupButton(_ sender: Any) {
-        
-    }
-    
-    override func viewDidLoad() {
-    super.viewDidLoad()
-        
+    let request = URLRequest(url: URL(string: "https://www.udacity.com/account/auth#!/signup")!)
+    UIApplication.shared.openURL(request.url!)
     }
 
     @IBAction func loginButton(_ sender: Any) {
     dismissKeyboard()
-    guard let username = usernameField.text, let password = passwordField.text else {
-    return
+    UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (data, result, error) in
+    if error != nil {
+    self.errorLabel.text = "Something Went Wrong! Try Again!"
+    
+    } else {
+    UdacityAPI.getPublicData()
+    self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
     }
+    }
+    }
+    
+    func dismissKeyboard() {
+    view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    dismissKeyboard()
+    return false
+    }
+    }
+
+
+    
     
 
-    let loginKey = loginKey()
-    UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
-    spinner.hide()
-    
-    if let response = response as? HTTPURLResponse {
-    if response.statusCode < 200 || response.statusCode > 300 {
-    self.presentAlert("Oops!", message: "Try Again Later!", actionTitle: "Return")
-    return
-    
-    }
+
+
+
     
     
-    if let error = error {
-    if error.code == NSURLErrorNotConnectedToInternet {
     
-    let alertViewMessage = self.invalidLinkMessage
-    let okActionAlertTitle = "OK"
-    
-    self.presentAlert("Not Working!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
-    }
+
+
+
+
+
     
     
-    } else {
-    do {
-    if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
-    if let accountDict = json["account"] as? [String:AnyObject] {
-    Users.uniqueKey = accountDict["key"] as! String
-    DispatchQueue.main.async(execute: {
+
     
-    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
-    self.present(tabBarVC, animated: true, completion: nil)
-    }
-    })
-    } else {
-    
-    self.presentAlert("Incorrect Login", message: "Username/Password Incorect", actionTitle: "OK")
-    }
-    }
-    
-    } catch {
-    
-    }
-    }
-    }
-    }
-    }
-    }

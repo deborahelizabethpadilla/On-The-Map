@@ -11,6 +11,8 @@ import CoreLocation
 import MapKit
 
 class InfoViewController: UIViewController, UITextViewDelegate {
+    
+    
     @IBOutlet var onthemapButton: UIButton!
     @IBOutlet var mapinfoView: MKMapView!
     @IBOutlet var cancelButton: UIButton!
@@ -36,41 +38,4 @@ class InfoViewController: UIViewController, UITextViewDelegate {
         
     }
     
-    fileprivate func viewMap() {
-    UIView.animate(withDuration: 0.5, animations: {
-    self.label.isHidden = true
-    self.locationtext.alpha = 0.0
-    self.onthemapButton.alpha = 0
-    self.submitButton.isHidden = false
-    self.onthemapButton.isEnabled = false
-    self.linktext.alpha = 1
-    self.view.backgroundColor = self.locationtext.backgroundColor
-    self.cancelButton.titleLabel?.textColor = UIColor.white
-    })
-        
-    let place = MKPlacemark(placemark: self.cords!)
-    self.mapinfoView.addAnnotation(place)
-        
-    let region = MKCoordinateRegionMakeWithDistance((place.location?.coordinate)!, 5000.0, 7000.0)
-        
-    mapinfoView.setRegion(region, animated: true)
-        
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-    if text == "\n" {
-    dismissKeyboard()
-    return false
     }
-    return true
-    }
-        
-    func textViewDidEndEditing(_ textView: UITextView) {
-    dismissKeyboard()
-    }
-        
-    func textViewDidBeginEditing(_ textView: UITextView) {
-    textView.text = nil
-    }
-    }
-    }
-
-

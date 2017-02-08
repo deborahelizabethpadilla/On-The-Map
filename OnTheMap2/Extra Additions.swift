@@ -24,19 +24,9 @@ extension UIViewController {
     self.present(alertView, animated: true, completion: nil)
     })
     }
-    
-    func showSpinner() -> UIActivityIndicatorView {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-    DispatchQueue.main.async(execute: {
-    spinner.center = self.view.center
-    spinner.color = UIColor.orange
-    self.view.addSubview(spinner)
-    spinner.startAnimating()
-            
-    })
-        
-    return spinner
+    func tapOutKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
-
     
     }

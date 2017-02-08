@@ -32,14 +32,16 @@ class TabBarController: UITabBarController {
     NotificationCenter.default.addObserver(self, selector: #selector(updateDataFailed), name: NSNotification.Name(rawValue: StudentInfoUpdated), object: nil)
         
     retrieveUserData()
-    UdacityAPI.getPublicData() { (data, response, error)
-            
-    if let error = error {
-    self.presentAlert(error)
-    }
-            
-    }
+    UdacityAPI.getPublicData()
         
+    UdacityAPI.session.dataTask(with: url) { (data, response, error) in
+    if let error = Error {
+    self.presentAlert(error)
+            
+    }
+    }
+    
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +62,17 @@ class TabBarController: UITabBarController {
     func postInformation() {
     performSegue(withIdentifier: pinInfo, sender: nil)
     }
+    
+    func retrieveUserData() {
+    ParseAPI.getLocationInfo()
+    }
+    
+    }
+
+
+    
+    func postInformation() {
+    
     
     func retrieveUserData() {
     ParseAPI.getLocationInfo()
