@@ -55,13 +55,28 @@
                     <view key="view" contentMode="scaleToFill" id="RjQ-qL-4Xd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="D7y-bb-piD"/>
+                                    <constraint firstAttribute="height" constant="554" id="NYf-Hd-zJw"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Egq-rO-Eoh" firstAttribute="top" secondItem="V1T-bf-wv7" secondAttribute="bottom" id="NHw-co-41L"/>
+                            <constraint firstAttribute="trailing" secondItem="Egq-rO-Eoh" secondAttribute="trailing" id="OxF-Iy-89h"/>
+                            <constraint firstItem="Egq-rO-Eoh" firstAttribute="leading" secondItem="RjQ-qL-4Xd" secondAttribute="leading" id="UlO-cA-Qeb"/>
+                            <constraint firstItem="Egq-rO-Eoh" firstAttribute="centerX" secondItem="RjQ-qL-4Xd" secondAttribute="centerX" id="x9n-cF-5nR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="map-location.png" id="daK-Ue-e7u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnC-Yi-tJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="430"/>
+            <point key="canvasLocation" x="837.60000000000002" y="429.53523238380814"/>
         </scene>
         <!--TableViewController-->
         <scene sceneID="e09-uq-azF">
@@ -147,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="-116" y="99"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="NKj-li-5fO">
             <objects>
-                <viewController id="oOx-4J-oPU" sceneMemberID="viewController">
+                <viewController id="oOx-4J-oPU" customClass="LoginViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sv4-Bd-jGQ"/>
                         <viewControllerLayoutGuide type="bottom" id="xPW-zn-rvO"/>
@@ -195,6 +210,7 @@
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
+                                    <action selector="signupButton:" destination="oOx-4J-oPU" eventType="touchUpInside" id="cfh-Kb-HOi"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="Q4P-kC-seL"/>
                                 </connections>
                             </button>
@@ -225,6 +241,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqa-fa-TPG">
+                                <rect key="frame" x="16" y="457" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7Jm-zI-3H8"/>
+                                    <constraint firstAttribute="width" constant="343" id="AV1-1w-gBH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -239,6 +265,7 @@
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" id="ETf-Vr-eNa"/>
                             <constraint firstItem="HlC-Go-fqW" firstAttribute="centerX" secondItem="5xf-3j-MHi" secondAttribute="centerX" id="J4d-T7-vEd"/>
                             <constraint firstItem="hVi-gc-i20" firstAttribute="centerX" secondItem="5xf-3j-MHi" secondAttribute="centerX" id="RJJ-TF-1d1"/>
+                            <constraint firstItem="mqa-fa-TPG" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" id="SLb-UT-d5G"/>
                             <constraint firstItem="8Uf-0B-9ob" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" id="Wx3-PC-dsB"/>
                             <constraint firstItem="udc-LZ-gxS" firstAttribute="top" secondItem="hVi-gc-i20" secondAttribute="bottom" constant="18" id="XqY-kH-GbG"/>
                             <constraint firstItem="hVi-gc-i20" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" constant="51" id="YTA-ef-aOx"/>
@@ -253,11 +280,21 @@
                             <constraint firstItem="6st-yh-lD0" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" constant="75" id="kC6-yT-DGS"/>
                             <constraint firstItem="8Uf-0B-9ob" firstAttribute="centerX" secondItem="5xf-3j-MHi" secondAttribute="centerX" id="lLR-xd-YMa"/>
                             <constraint firstItem="HlC-Go-fqW" firstAttribute="top" secondItem="6st-yh-lD0" secondAttribute="bottom" constant="23" id="mRP-8P-eGy"/>
+                            <constraint firstItem="mqa-fa-TPG" firstAttribute="centerX" secondItem="5xf-3j-MHi" secondAttribute="centerX" id="mSP-WO-S09"/>
+                            <constraint firstItem="mqa-fa-TPG" firstAttribute="trailing" secondItem="5xf-3j-MHi" secondAttribute="trailingMargin" id="mdK-h3-Kzl"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="top" secondItem="udc-LZ-gxS" secondAttribute="bottom" constant="39" id="o1V-wf-EOL"/>
+                            <constraint firstItem="mqa-fa-TPG" firstAttribute="top" secondItem="8nc-cK-2ai" secondAttribute="bottom" constant="21" id="pGq-gM-q8o"/>
                             <constraint firstItem="8nc-cK-2ai" firstAttribute="centerX" secondItem="5xf-3j-MHi" secondAttribute="centerX" id="wFk-me-pig"/>
                             <constraint firstItem="8nc-cK-2ai" firstAttribute="top" secondItem="8Uf-0B-9ob" secondAttribute="bottom" constant="41" id="xp4-AH-k2F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="mqa-fa-TPG" id="iER-GK-eMn"/>
+                        <outlet property="imageView" destination="hVi-gc-i20" id="ZlV-Fr-uWj"/>
+                        <outlet property="loginButton" destination="8nc-cK-2ai" id="TXK-YB-Nfp"/>
+                        <outlet property="passwordField" destination="8Uf-0B-9ob" id="q9P-6v-Tl5"/>
+                        <outlet property="usernameField" destination="9Ze-Sq-04P" id="9kT-gT-jPJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gu7-Zk-V48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
