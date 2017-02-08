@@ -61,14 +61,3 @@ class TabBarController: UITabBarController {
     
     }
 
-
-    
-    func postInformation() {
-    
-    
-    func retrieveUserData() {
-    ParseAPI.getLocationInfo()
-    }
-    
-    }
-
