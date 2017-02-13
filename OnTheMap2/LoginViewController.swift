@@ -18,8 +18,12 @@ class LoginViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     @IBAction func signupButton(_ sender: Any) {
-    let request = URLRequest(url: URL(string: "https://www.udacity.com/account/auth#!/signup")!)
-    UIApplication.shared.openURL(request.url!)
+    let url = URL(string: "https://www.udacity.com/account/auth#!/signup")!
+    if #available(iOS 10.0, *) {
+    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+    UIApplication.shared.openURL(url)
+    }
     }
 
     @IBAction func loginButton(_ sender: Any) {

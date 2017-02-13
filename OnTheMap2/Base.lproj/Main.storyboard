@@ -229,7 +229,7 @@
         <scene sceneID="NMq-eN-moN">
             <objects>
                 <navigationController restorationIdentifier="UINavigationController" id="6Zs-5b-mFP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YJd-5W-ier">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJd-5W-ier">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -261,7 +261,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ze-Sq-04P">
                                 <rect key="frame" x="16" y="275" width="343" height="30"/>
