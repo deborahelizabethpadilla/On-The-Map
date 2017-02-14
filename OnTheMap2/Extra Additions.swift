@@ -25,8 +25,21 @@ extension UIViewController {
     })
     }
     func tapOutKeyboard() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+    let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
+    view.addGestureRecognizer(tap)
     }
-    
+    func dismissKeyboard() {
+    view.endEditing(true)
+    }
+    func showSpinner() -> UIActivityIndicatorView {
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    DispatchQueue.main.async(execute: {
+    spinner.center = self.view.center
+    spinner.color = UIColor.orange
+    self.view.addSubview(spinner)
+    spinner.startAnimating()
+    })
+        
+    return spinner
+    }    
     }

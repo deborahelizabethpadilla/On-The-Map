@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let invalidNetwork = "Oh Snap! You Don't Have Internet!"
 
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -18,52 +19,78 @@ class LoginViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     @IBAction func signupButton(_ sender: Any) {
-    let url = URL(string: "https://www.udacity.com/account/auth#!/signup")!
-    if #available(iOS 10.0, *) {
-    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    } else {
-    UIApplication.shared.openURL(url)
+    _ = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController")
+    UIApplication.shared.openURL(URL(string: url.URL)!)
     }
+    struct url {
+    static let URL = "https://www.udacity.com/account/auth#!/signup"
     }
 
     @IBAction func loginButton(_ sender: Any) {
     dismissKeyboard()
-    UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (data, result, error) in
-    if error != nil {
-    self.errorLabel.text = "Something Went Wrong! Try Again!"
-    
+    guard let username = usernameField.text, let password = passwordField.text else {
+    return
+    }
+        
+    let spinner = showSpinner()
+    UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
+    spinner.hide()
+            
+    if let response = response as? HTTPURLResponse {
+    if response.statusCode < 200 || response.statusCode > 300 {
+    self.presentAlert("Try Again Later", message: "There was an error. Please try again later!", actionTitle: "Return")
+    return
+    }
+    }
+    if let error = error {
+                // Network Error
+    if error.code == NSURLErrorNotConnectedToInternet {
+                    
+    let alertViewMessage = self.invalidNetwork
+    let okActionAlertTitle = "OK"
+                    
+    self.presentAlert("Not Connected!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
+                    
+    }
     } else {
-    UdacityAPI.getPublicData()
-    self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController")
+    do {
+    if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
+    if let accountDict = json["account"] as? [String:AnyObject] {
+    Users.uniqueKey = accountDict["key"] as! String
+    DispatchQueue.main.async(execute: {
+                                // present the Map And Table Tabbed View
+    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarNavController") {
+    self.present(tabBarVC, animated: true, completion: nil)
+    }
+    })
+    } else {
+                            // can't log in, invalid user. show UIAlertView or UIAlertController
+    self.presentAlert("Incorrect Login", message: "The username and/or password may be incorrect", actionTitle: "OK")
+    }
+    }
+                    
+    } catch {
+                    
     }
     }
     }
     
-    func dismissKeyboard() {
-    view.endEditing(true)
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    dismissKeyboard()
-    return false
+    override func viewDidLoad() {
+    tapOutKeyboard()
+        
+    let spacerView = UIView(frame:CGRect(x:0, y:0, width:20, height:10))
+    usernameField.leftViewMode = UITextFieldViewMode.always
+    usernameField.leftView = spacerView
+        
+    let anotherSpacerView = UIView(frame:CGRect(x:0, y:0, width:20, height:10))
+    passwordField.leftViewMode = UITextFieldViewMode.always
+    passwordField.leftView = anotherSpacerView
+        
+    usernameField.delegate = self
+    passwordField.delegate = self
     }
     }
 
-
-    
-    
-
-
-
-
-    
-    
-    
-
-
-
-
-
-    
-    
 
     

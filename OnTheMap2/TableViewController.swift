@@ -15,7 +15,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let reuseIdentifier = "infoCell"
     
     let returnActionTitle = "Return"
-    let invalidLinkProvidedMessage = "Oh No! Can't Open Link!"
+    let invalidNetworkMessage = "Oh No! Can't Open Link!"
     let badLinkTitle = "Oh No! Bad URL!"
     let parseRetrievalFailedTitle = "No Data!"
     
@@ -46,7 +46,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     guard let providedURL = tableView.cellForRow(at: indexPath)?.detailTextLabel?.text,
     let url = URL(string: providedURL), app.openURL(url) == true else {
                 
-    let alertViewMessage = invalidLinkProvidedMessage
+    let alertViewMessage = invalidNetworkMessage
     let alertActionTitle = returnActionTitle
                 
     presentAlert(badLinkTitle, message: alertViewMessage, actionTitle: alertActionTitle)
