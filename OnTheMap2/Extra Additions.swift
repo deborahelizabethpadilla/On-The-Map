@@ -23,7 +23,7 @@ extension UIViewController {
     DispatchQueue.main.async(execute: {
     self.present(alertView, animated: true, completion: nil)
     })
-    }
+    
     func tapOutKeyboard() {
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(LoginViewController.dismissKeyboard))
     view.addGestureRecognizer(tap)
@@ -42,4 +42,5 @@ extension UIViewController {
         
     return spinner
     }    
+    }
     }
