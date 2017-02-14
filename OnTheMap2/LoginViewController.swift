@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     guard let username = usernameField.text, let password = passwordField.text else {
     return
     }
-        
+    
     let spinner = showSpinner()
     UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
     spinner.hide()
@@ -49,8 +49,8 @@ class LoginViewController: UIViewController {
     let alertViewMessage = self.invalidNetwork
     let okActionAlertTitle = "OK"
                     
-    self.presentAlert("Not Connected!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
-                    
+    self.presentAlert("Not Connected", message: alertViewMessage, actionTitle: okActionAlertTitle)
+        
     }
     } else {
     do {
