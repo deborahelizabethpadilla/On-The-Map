@@ -376,6 +376,7 @@
                         <outlet property="loginButton" destination="8nc-cK-2ai" id="TXK-YB-Nfp"/>
                         <outlet property="passwordField" destination="8Uf-0B-9ob" id="q9P-6v-Tl5"/>
                         <outlet property="usernameField" destination="9Ze-Sq-04P" id="9kT-gT-jPJ"/>
+                        <segue destination="6Zs-5b-mFP" kind="show" identifier="login" id="nCX-pt-wPY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gu7-Zk-V48" userLabel="First Responder" sceneMemberID="firstResponder"/>
