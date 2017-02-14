@@ -80,7 +80,7 @@ class LoginViewController: UIViewController {
     })
     } else {
         
-    self.presentAlert("Incorrect Login", message: "The username and/or password may be incorrect", actionTitle: "OK")
+    self.presentAlert("Something Went Wrong!", message: "Username And/Or Password Is Incorrect!", actionTitle: "OK")
     }
     }
                     
