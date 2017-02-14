@@ -76,7 +76,7 @@ import Foundation
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.httpBody = "{\"uniqueKey\": \"1234\", \"firstName\": \"John\", \"lastName\": \"Doe\",\"mapString\": \"Cupertino, CA\", \"mediaURL\": \"https://udacity.com\",\"latitude\": 37.322998, \"longitude\": -122.032182}".data(using: String.Encoding.utf8)
     let session = URLSession.shared
-    let task = session.dataTask(with: request as URLRequest) { data, response, error in
+    _ = session.dataTask(with: request as URLRequest) { data, response, error in
     if error != nil { // Handle error…
     return
                 
