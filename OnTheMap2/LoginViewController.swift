@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
     let alertViewMessage = self.invalidNetwork
     let okActionAlertTitle = "OK"
                     
-    self.presentAlert("Not Online", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
+    self.presentAlert("Not Online", message: alertViewMessage, actionTitle: okActionAlertTitle)
                     
     }
     } else {
