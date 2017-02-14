@@ -77,6 +77,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     spinner.hide()
     if user != nil {
     //Logged In!
+    if let accountDict = ["account"] as? [String:AnyObject] {
+    Users.uniqueKey = accountDict["key"] as! String
+    DispatchQueue.main.async(execute: {
     //Present The Map And Tabbed View
     if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
     self.present(tabBarVC, animated: true, completion: nil)
@@ -110,12 +113,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
     }
     }
+    })
     }
     }
     }
     }
-
-
+    }
 
 
 
