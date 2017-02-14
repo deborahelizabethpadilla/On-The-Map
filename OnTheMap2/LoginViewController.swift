@@ -72,9 +72,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     UIApplication.shared.beginIgnoringInteractionEvents()
         
     }
+    let spinner = showSpinner()
     UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (data, user, error) in
+    spinner.hide()
     if user != nil {
     //Logged In!
+    //Present The Map And Tabbed View
+    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
+    self.present(tabBarVC, animated: true, completion: nil)
         
     } else {
         
@@ -88,10 +93,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     self.displayAlert(title: "Failed Logging In!", message: errorMessage)
     
     }
+    if let response = user as? HTTPURLResponse {
+    if response.statusCode < 200 || response.statusCode > 300 {
+    self.displayAlert(title: "Try Again Later!", message: "Error!")
+    return
+    }
+    }
+    if let error = error {
+    //Network Error
+    if error.code == NSURLErrorNotConnectedToInternet {
+                
+    let alertViewMessage = self.invalidNetwork
+    let okActionAlertTitle = "OK"
+                
+    self.presentAlert("Not Online!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
+                
     }
     }
     }
-
+    }
+    }
+    }
 
 
 

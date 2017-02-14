@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="742" y="842"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="1NF-Dw-mhz">
             <objects>
-                <tabBarController restorationIdentifier="TabBarViewController" storyboardIdentifier="TabBarViewController" id="RDW-TZ-vAu" customClass="TabBarController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="TabBarViewController" storyboardIdentifier="TabBarViewController" id="RDW-TZ-vAu" customClass="TabBarViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="d0W-p3-sq8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
