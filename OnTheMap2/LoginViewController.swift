@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
     if let accountDict = json["account"] as? [String:AnyObject] {
     Users.uniqueKey = accountDict["key"] as! String
     DispatchQueue.main.async(execute: {
-    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarNavController") {
+    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") {
     self.present(tabBarVC, animated: true, completion: nil)
     }
     })
