@@ -73,29 +73,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     let spinner = showSpinner()
-    UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (data, user, error) in
+    UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (user, response, error) in
     spinner.hide()
     if user != nil {
         
     //Logged In!
         
     self.performSegue(withIdentifier: "login", sender: self)
-    if let accountDict = ["account"] as? [String:AnyObject] {
+    if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
+    if let accountDict = json["account"] as? [String:AnyObject] {
     Users.uniqueKey = accountDict["key"] as! String
     DispatchQueue.main.async(execute: {
         
     //Present The Map And Tabbed View
     if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
     self.present(tabBarVC, animated: true, completion: nil)
-        
-    } else {
-        
-    var errorMessage = "Try Again Later!"
-        
-    if let errorString = error!.userInfo["error"] as? String {
-    errorMessage = errorString
-    
     }
+    })
+    
+    } else {
         
     self.displayAlert(title: "Failed Logging In!", message: errorMessage)
     
@@ -117,7 +113,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
     }
     }
-    })
     }
     }
     }
