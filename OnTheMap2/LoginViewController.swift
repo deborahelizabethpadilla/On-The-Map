@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
             
     if let response = response as? HTTPURLResponse {
     if response.statusCode < 200 || response.statusCode > 300 {
-    self.presentAlert("Try Again Later", message: "There was an error. Please try again later!", actionTitle: "Return")
+    self.presentAlert("Try Again Later!", message: "Error! Try again later!", actionTitle: "Return")
     return
     }
     }
