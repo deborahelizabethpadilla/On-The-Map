@@ -80,16 +80,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //Logged In!
         
     self.performSegue(withIdentifier: "login", sender: self)
-    if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
-    if let accountDict = json["account"] as? [String:AnyObject] {
-    Users.uniqueKey = accountDict["key"] as! String
-    DispatchQueue.main.async(execute: {
         
     //Present The Map And Tabbed View
     if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
     self.present(tabBarVC, animated: true, completion: nil)
+    
     }
-    })
     
     } else {
         
@@ -115,9 +111,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     }
     }
-    }
-    }
-    }
+
 
 
 
