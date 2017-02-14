@@ -18,6 +18,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    func displayAlert(title: String, message: String) {
+        
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+    self.dismiss(animated: true, completion: nil)
+    }))
+    self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
     tapOutKeyboard()
         
@@ -43,55 +55,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginButton(_ sender: Any) {
     dismissKeyboard()
-        
-    guard let username = usernameField.text, let password = passwordField.text else {
-    return
-    }
-        
-    let spinner = showSpinner()
-    UdacityAPI.signInWithLogin(username, password: password) { (data, response, error) in
-    spinner.hide()
-            
-    if let response = response as? HTTPURLResponse {
-    if response.statusCode < 200 || response.statusCode > 300 {
-    self.presentAlert("Try Again Later!", message: "Error! Try again later!", actionTitle: "Return")
-    return
-    }
-    }
-    if let error = error {
-        
-    if error.code == NSURLErrorNotConnectedToInternet {
-                    
-    let alertViewMessage = self.invalidNetwork
-    let okActionAlertTitle = "OK"
-                    
-    self.presentAlert("Not Online", message: alertViewMessage, actionTitle: okActionAlertTitle)
-                    
-    }
-    } else {
-    do {
-    if let json = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? [String:AnyObject] {
-    if let accountDict = json["account"] as? [String:AnyObject] {
-    Users.uniqueKey = accountDict["key"] as! String
-    DispatchQueue.main.async(execute: {
-    if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") {
-    self.present(tabBarVC, animated: true, completion: nil)
-    }
-    })
-    } else {
-        
-    self.presentAlert("Something Went Wrong!", message: "Username And/Or Password Is Incorrect!", actionTitle: "OK")
-    }
-    }
-                    
-    } catch {
-                    
-    }
-    }
-    }
-    }
- 
-    }
-
-
+    self.view.endEditing(true)
     
+    if usernameField.text == "" || passwordField.text == "" {
+            
+    displayAlert(title: "Oh Snap!", message: "Something Went Wrong! Try Again!")
+        
+    } else {
+            
+    activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    activityIndicator.center = self.view.center
+    activityIndicator.hidesWhenStopped = true
+    activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+    view.addSubview(activityIndicator)
+    activityIndicator.startAnimating()
+    UIApplication.shared.beginIgnoringInteractionEvents()
+        
+    }
+    UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (data, user, error) in
+    if user != nil {
+    //Logged In!
+        
+    } else {
+        
+    var errorMessage = "Try Again Later!"
+        
+    if let errorString = error!.userInfo["error"] as? String {
+    errorMessage = errorString
+    
+    }
+        
+    self.displayAlert(title: "Failed Logging In!", message: errorMessage)
+    
+    }
+    }
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
