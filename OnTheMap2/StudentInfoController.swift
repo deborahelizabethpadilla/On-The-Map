@@ -10,7 +10,7 @@ import Foundation
 
 let StudentInfoUpdated = "StudentInfoUpdated"
 
-    struct StudentInfoController {
+struct StudentInfoController {
     
     static let createdAtKey = "createdAt"
     static let firstNameKey = "firstName"
@@ -25,16 +25,16 @@ let StudentInfoUpdated = "StudentInfoUpdated"
     static var people = [StudentInfo]()
     
     static func studentList(withStudents newStudents: [[String: AnyObject]]) {
-    people.removeAll()
+        people.removeAll()
         
-    for firststudent in newStudents {
-    let newStudent = StudentInfo(peopleInfo: firststudent)
-    StudentInfoController.people.append(newStudent)
+        for firststudent in newStudents {
+            let newStudent = StudentInfo(peopleInfo: firststudent)
+            StudentInfoController.people.append(newStudent)
             
-    }
+        }
         
-    let note = Notification(name: Notification.Name(rawValue: StudentInfoUpdated), object: nil)
-    NotificationCenter.default.post(note)
+        let note = Notification(name: Notification.Name(rawValue: StudentInfoUpdated), object: nil)
+        NotificationCenter.default.post(note)
         
     }
-    }
+}

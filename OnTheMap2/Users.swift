@@ -17,18 +17,18 @@ struct Users {
     static var longitude: Double = 0.0
     static var mapString: String = ""
     static var mediaURL: String = ""
-    }
+}
 
-    func parseUserData(_ data: Data) -> Bool {
-
-    if let json = try! JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String:AnyObject] {
-    if let accountDict = json["account"] as? [String:AnyObject] {
-    Users.uniqueKey = accountDict["key"] as! String
-    DispatchQueue.main.async(execute: {
+func parseUserData(_ data: Data) -> Bool {
     
-    })
-
+    if let json = try! JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String:AnyObject] {
+        if let accountDict = json["account"] as? [String:AnyObject] {
+            Users.uniqueKey = accountDict["key"] as! String
+            DispatchQueue.main.async(execute: {
+                
+            })
+            
+        }
     }
-    }
-    }
+}
 

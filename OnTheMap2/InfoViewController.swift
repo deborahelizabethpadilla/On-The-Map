@@ -28,14 +28,14 @@ class InfoViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         
-    linktext.delegate = self
-    self.locationtext.delegate = self
-    self.linktext.alpha = 0
-    self.submitButton.isHidden = true
-    tapOutKeyboard()
-    linktext.returnKeyType = .done
-    locationtext.returnKeyType = .done
+        linktext.delegate = self
+        self.locationtext.delegate = self
+        self.linktext.alpha = 0
+        self.submitButton.isHidden = true
+        tapOutKeyboard()
+        linktext.returnKeyType = .done
+        locationtext.returnKeyType = .done
         
     }
     
-    }
+}
