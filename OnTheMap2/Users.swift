@@ -30,5 +30,7 @@ func parseUserData(_ data: Data) -> Bool {
             
         }
     }
+    
+    return true
 }
 
