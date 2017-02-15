@@ -73,31 +73,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         let spinner = showSpinner()
-        UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (user, response, error) -> Void in
-        
+        UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { user, response, error in
             spinner.hide()
             if user != nil {
-                
+            
                 //Logged In!
                 
                 self.performSegue(withIdentifier: "login", sender: self)
+               
                 
                 //Present The Map And Tabbed View
                 if let tabBarVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") {
                     self.present(tabBarVC, animated: true, completion: nil)
-                    
+                return
                 }
-                
+            
+            
             } else {
                 
                 self.displayAlert(title: "Failed Logging In!", message: errorMessage)
-                
+    
             }
+        
             if let response = user as? HTTPURLResponse {
                 if response.statusCode < 200 || response.statusCode > 300 {
                     self.displayAlert(title: "Try Again Later!", message: "Error!")
                     return
                 }
+            
             }
             if let error = error {
                 //Network Error
@@ -113,6 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 }
+
 
 
 
