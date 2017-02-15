@@ -94,8 +94,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.performSegue(withIdentifier: "login", sender: self)
                 
                 
-                
-                
             } else {
                 
                 self.displayAlert(title: "Failed Log In!", message: "Try Again!")
