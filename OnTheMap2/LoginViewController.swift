@@ -92,7 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             } else {
                 
-                self.displayAlert(title: "Failed Logging In!", message: error)
+                self.displayAlert(title: "Failed Log In!", message: "Try Again!")
     
             }
         
