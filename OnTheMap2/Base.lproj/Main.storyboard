@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="554"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="D7y-bb-piD"/>
                                     <constraint firstAttribute="height" constant="554" id="NYf-Hd-zJw"/>
@@ -376,7 +376,7 @@
                         <outlet property="loginButton" destination="8nc-cK-2ai" id="TXK-YB-Nfp"/>
                         <outlet property="passwordField" destination="8Uf-0B-9ob" id="q9P-6v-Tl5"/>
                         <outlet property="usernameField" destination="9Ze-Sq-04P" id="9kT-gT-jPJ"/>
-                        <segue destination="6Zs-5b-mFP" kind="show" identifier="login" id="nCX-pt-wPY"/>
+                        <segue destination="RDW-TZ-vAu" kind="show" identifier="login" id="ezh-b6-LHH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gu7-Zk-V48" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -390,4 +390,7 @@
         <image name="placeholder.png" width="24" height="24"/>
         <image name="udacitylogo.png" width="234" height="123"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ezh-b6-LHH"/>
+    </inferredMetricsTieBreakers>
 </document>
