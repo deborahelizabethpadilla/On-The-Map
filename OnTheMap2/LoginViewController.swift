@@ -121,7 +121,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            //Enter Is Pressed, Hide The Keyboard
+            if textField == usernameField {
+                passwordField.becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
+            }
+            return true
+        }
+        
     }
+    //Keyboard Notifications
     
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -148,13 +160,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
