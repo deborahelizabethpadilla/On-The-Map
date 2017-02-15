@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         let spinner = showSpinner()
-        UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (user, response, error) in
+        UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { (user, response, error) -> Void in
         
             spinner.hide()
             if user != nil {
