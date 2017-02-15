@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
     override func viewDidLoad() {
         tapOutKeyboard()
         
@@ -91,7 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             } else {
                 
-                self.displayAlert(title: "Failed Logging In!", message: errorMessage)
+                self.displayAlert(title: "Failed Logging In!", message: error)
     
             }
         

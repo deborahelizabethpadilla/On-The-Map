@@ -40,8 +40,8 @@
 		502B3FDA1E4AA80C009EF4E3 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD91E4AA80C009EF4E3 /* Users.swift */; };
 		502B3FDC1E4AA820009EF4E3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */; };
 		502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */; };
-		502B3FE01E4AA87B009EF4E3 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */; };
 		502B3FE21E4AA883009EF4E3 /* ParseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FE11E4AA883009EF4E3 /* ParseAPI.swift */; };
+		50FCC6141E54E04F006A3805 /* UdacityAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDF1E4AA87B009EF4E3 /* UdacityAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -280,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FCC6141E54E04F006A3805 /* UdacityAPI.swift in Sources */,
 				502B3FA41E4AA05F009EF4E3 /* SignupViewController.swift in Sources */,
 				502B3FD21E4AA7D5009EF4E3 /* TableViewController.swift in Sources */,
 				502B3FDC1E4AA820009EF4E3 /* TabBarController.swift in Sources */,
@@ -288,7 +289,6 @@
 				502B3FD81E4AA7FF009EF4E3 /* StudentInfoController.swift in Sources */,
 				502B3FD41E4AA7E1009EF4E3 /* InfoViewController.swift in Sources */,
 				502B3F921E4A9EFE009EF4E3 /* AppDelegate.swift in Sources */,
-				502B3FE01E4AA87B009EF4E3 /* UdacityAPI.swift in Sources */,
 				502B3FD01E4AA7C6009EF4E3 /* MapViewController.swift in Sources */,
 				502B3FCE1E4AA7B6009EF4E3 /* Extra Additions.swift in Sources */,
 				502B3FD61E4AA7EC009EF4E3 /* StudentInfo.swift in Sources */,
@@ -462,6 +462,7 @@
 				502B3FA21E4A9EFE009EF4E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
