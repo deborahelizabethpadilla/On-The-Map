@@ -8,51 +8,76 @@
 
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var indicator = Indicator()
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet var tableView: UITableView!
     
-    let reuseIdentifier = "infoCell"
-    
-    let returnActionTitle = "Return"
-    let invalidNetworkMessage = "Oh No! Can't Open Link!"
-    let badLinkTitle = "Oh No! Bad URL!"
-    let parseRetrievalFailedTitle = "No Data!"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+    @IBAction func refreshButton(_ sender: Any) {
+        indicator.loadingView(true)
+        loadTableView()
+    }
+    @IBAction func addLocation(_ sender: Any) {
+        UdacityNetwork.sharedInstance().addLocation(self)
+    }
+    @IBAction func logoutButton(_ sender: Any) {
+        UdacityNetwork.sharedInstance().logout(self)
+        
     }
     
+    override func viewDidLoad() {
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        indicator.loadingView(true)
+        loadTableView()
+    }
+    
+    func loadTableView() {
+        UdacityNetwork.sharedInstance().getStudentData {(success, error) in
+            if success {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.indicator.loadingView(false)
+                }
+                
+            } else {
+                UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.DataError)
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberofPeople = StudentInfoController.people.count
-        return numberofPeople
+        return UsersInfo.UsersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for:  indexPath)
-        let studentInfo = StudentInfoController.people[indexPath.row]
-        cell.textLabel?.text = "\(studentInfo.firstName) \(studentInfo.lastName)"
-        cell.detailTextLabel?.text = "\(studentInfo.mediaURL)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell")!
+        let student = UsersInfo.UsersArray[indexPath.row]
+        
+        //Set the name and image
+        cell.textLabel?.text = "\(student.firstName) \(student.lastName)"
+        cell.imageView?.image = UIImage(named: "pin")
+        cell.detailTextLabel?.text = student.mediaURL
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let student = UsersInfo.UsersArray[indexPath.row]
         let app = UIApplication.shared
-        
-        guard let providedURL = tableView.cellForRow(at: indexPath)?.detailTextLabel?.text,
-            let url = URL(string: providedURL), app.openURL(url) == true else {
-                
-                let alertViewMessage = invalidNetworkMessage
-                let alertActionTitle = returnActionTitle
-                
-                presentAlert(badLinkTitle, message: alertViewMessage, actionTitle: alertActionTitle)
-                return
-                
+        if UdacityNetwork.sharedInstance().checkURL(student.mediaURL){
+            app.openURL(URL(string: student.mediaURL)!)
+        } else {
+            UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.InvalidLink)
         }
+        
+        
     }
+    
 }
-

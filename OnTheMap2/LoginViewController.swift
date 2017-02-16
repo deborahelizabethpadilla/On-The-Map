@@ -10,7 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    var appDelegate: AppDelegate!
+    var indicator = Indicator()
+    
     let invalidNetwork = "Oh Snap! You Don't Have Internet!"
+    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -18,7 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     func displayAlert(title: String, message: String) {
         
@@ -32,23 +36,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         tapOutKeyboard()
         
-        let spacerView = UIView(frame:CGRect(x:0, y:0, width:20, height:10))
-        usernameField.leftViewMode = UITextFieldViewMode.always
-        usernameField.leftView = spacerView
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let anotherSpacerView = UIView(frame:CGRect(x:0, y:0, width:20, height:10))
-        passwordField.leftViewMode = UITextFieldViewMode.always
-        passwordField.leftView = anotherSpacerView
-        
-        usernameField.delegate = self
-        passwordField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,80 +55,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signupButton(_ sender: Any) {
-        _ = self.storyboard?.instantiateViewController(withIdentifier: "SignupViewController")
-        UIApplication.shared.openURL(URL(string: url.URL)!)
+        UIApplication.shared.open(URL(string: "https://auth.udacity.com/sign-up?next=https%3A%2F%2Fclassroom.udacity.com%2Fauthenticated")!,
+                                  options: [:], completionHandler: nil)
     }
-    struct url {
-        static let URL = "https://www.udacity.com/account/auth#!/signup"
-    }
+    
     
     @IBAction func loginButton(_ sender: Any) {
         dismissKeyboard()
         self.view.endEditing(true)
         
-        if usernameField.text == "" || passwordField.text == "" {
-            
-            displayAlert(title: "Oh Snap!", message: "Something Went Wrong! Try Again!")
-            
-        } else {
-            
-            activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-            view.addSubview(activityIndicator)
-            activityIndicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
-            
-        }
-        let spinner = showSpinner()
-        UdacityAPI.signInWithLogin(usernameField.text!, password: passwordField.text!) { user, response, error in
-            spinner.hide()
-            if user != nil {
-                
-                //Logged In!
-                //Present The Map And Tabbed View
-                
-                self.performSegue(withIdentifier: "login", sender: self)
-                
-                
-            } else {
-                
-                self.displayAlert(title: "Failed Log In!", message: "Try Again!")
-                
-            }
-            
-            if let response = user as? HTTPURLResponse {
-                if response.statusCode < 200 || response.statusCode > 300 {
-                    self.displayAlert(title: "Try Again Later!", message: "Error!")
-                    return
-                }
-                
-            }
-            if let error = error {
-                //Network Error
-                if error.code == NSURLErrorNotConnectedToInternet {
-                    
-                    let alertViewMessage = self.invalidNetwork
-                    let okActionAlertTitle = "OK"
-                    
-                    self.presentAlert("Not Online!", message: alertViewMessage, actionTitle: okActionAlertTitle, actionHandler: nil)
-                    
-                }
-            }
-        }
         
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            //Enter Is Pressed, Hide The Keyboard
-            if textField == usernameField {
-                passwordField.becomeFirstResponder()
-            } else {
-                textField.resignFirstResponder()
+    }
+    
+    //Login To Udacity
+    
+    func loginwithUdacity() {
+        UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (successful, errorMessage, error) in
+            if successful {
+                UdacityNetwork.sharedInstance().getUserData(userID: self.appDelegate.userID, completionHandlerForAuth: { (successful, error) in
+                    
+                })
             }
-            return true
         }
         
     }
+    
     //Keyboard Notifications
     
     func subscribeToKeyboardNotifications() {

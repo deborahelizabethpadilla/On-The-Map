@@ -12,30 +12,57 @@ import MapKit
 
 class InfoViewController: UIViewController, UITextViewDelegate {
     
+    var appDelegate: AppDelegate!
+    var latitude: Double = 0.00
+    var longitude: Double = 0.00
+    var addLocation = addLocationDelegate()
     
-    @IBOutlet var onthemapButton: UIButton!
-    @IBOutlet var mapinfoView: MKMapView!
-    @IBOutlet var cancelButton: UIButton!
-    @IBOutlet var linktext: UITextView!
-    @IBOutlet var locationtext: UITextView!
-    @IBOutlet var submitButton: UIButton!
-    @IBOutlet var label: UILabel!
+    var indicator = Indicator()
     
-    let geoCodeError = "Cannot Geocode!"
+    @IBOutlet var locationText: UITextField!
     
-    var activityIndicator: UIActivityIndicatorView?
-    var cords : CLPlacemark?
     
-    override func viewDidLoad() {
+    @IBAction func findOTMButton(_ sender: Any) {
+        self.indicator.loadingView(true)
+        let localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = locationText.text
+        let localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.start { (localSearchResponse, error) -> Void in
+            if localSearchResponse == nil{
+                UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.MapError)
+                self.indicator.loadingView(false)
+                return
+            }
+            let pointAnnotation = MKPointAnnotation()
+            pointAnnotation.title = self.locationText.text
+            pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
+            
+            self.latitude = localSearchResponse!.boundingRegion.center.latitude
+            self.longitude = localSearchResponse!.boundingRegion.center.longitude
+            
+            let controller = self.storyboard!.instantiateViewController(withIdentifier: "LinkViewController") as! LinkViewController
+            controller.pointAnnotation = pointAnnotation
+            controller.latitude = self.latitude
+            controller.longitude = self.longitude
+            self.indicator.loadingView(false)
+            self.present(controller, animated: true, completion: nil)
+        }
         
-        linktext.delegate = self
-        self.locationtext.delegate = self
-        self.linktext.alpha = 0
-        self.submitButton.isHidden = true
-        tapOutKeyboard()
-        linktext.returnKeyType = .done
-        locationtext.returnKeyType = .done
         
     }
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        locationText.delegate = addLocation
+        
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        
+    }
 }
+

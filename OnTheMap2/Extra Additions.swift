@@ -18,40 +18,6 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    func presentAlert(_ error: NSError) {
-        presentAlert("Error", message: error.localizedDescription, actionTitle: "OK", actionHandler: nil)
-    }
-    
-    func presentAlert(_ title: String, message: String, actionTitle: String, actionHandler: ((UIAlertAction) -> Void)?) {
-        
-        let alertControllerStyle = UIAlertControllerStyle.alert
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: alertControllerStyle)
-        
-        let alertActionStyle = UIAlertActionStyle.default
-        let alertAction = UIAlertAction(title: actionTitle, style: alertActionStyle, handler: actionHandler)
-        
-        alertView.addAction(alertAction)
-        
-        DispatchQueue.main.async(execute: {
-            self.present(alertView, animated: true, completion: nil)
-        })
-    }
-    
-    func presentAlert(_ title: String, message: String, actionTitle: String) {
-        
-        let alertControllerStyle = UIAlertControllerStyle.alert
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: alertControllerStyle)
-        
-        let alertActionStyle = UIAlertActionStyle.default
-        let alertActionOK = UIAlertAction(title: actionTitle, style: alertActionStyle, handler: nil)
-        
-        alertView.addAction(alertActionOK)
-        
-        DispatchQueue.main.async(execute: {
-            self.present(alertView, animated: true, completion: nil)
-        })
-    }
-    
     func showSpinner() -> UIActivityIndicatorView {
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         DispatchQueue.main.async(execute: {
@@ -62,15 +28,5 @@ extension UIViewController {
         })
         
         return spinner
-    }
-}
-
-
-extension UIActivityIndicatorView {
-    func hide() {
-        DispatchQueue.main.async(execute: {
-            self.stopAnimating()
-            self.removeFromSuperview()
-        })
     }
 }

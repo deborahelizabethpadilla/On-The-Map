@@ -12,7 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userID: String = ""
+    
+    //Users Data
+    
+    var firstName: String = ""
+    var lastName: String = ""
+    var objectId: String = ""
+    var uniqueKey: String = ""
+    
+    //Will Overwrite
+    
+    var willOverwrite: Bool = false
+    
+    //Error Messages
+    
+    let errorMessage = ErrorMessage()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

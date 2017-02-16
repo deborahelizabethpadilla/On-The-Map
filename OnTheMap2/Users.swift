@@ -2,35 +2,57 @@
 //  Users.swift
 //  OnTheMap2
 //
-//  Created by Deborah on 2/7/17.
+//  Created by Deborah on 2/15/17.
 //  Copyright © 2017 Deborah. All rights reserved.
 //
 
 import Foundation
+import MapKit
 
-struct Users {
+struct UsersInfo {
     
-    static var firstName: String = ""
-    static var lastName: String = ""
-    static var uniqueKey: String = ""
-    static var latitude: Double = 0.0
-    static var longitude: Double = 0.0
-    static var mapString: String = ""
-    static var mediaURL: String = ""
-}
-
-func parseUserData(_ data: Data) -> Bool {
+    let firstName: String
+    let lastName: String
+    let mediaURL: String
+    let lat: Double
+    let long: Double
+    let objectId: String
+    let uniqueKey: String
     
-    if let json = try! JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String:AnyObject] {
-        if let accountDict = json["account"] as? [String:AnyObject] {
-            Users.uniqueKey = accountDict["key"] as! String
-            DispatchQueue.main.async(execute: {
-                
-            })
-            
+    
+    init?(dictionary: [String:Any]) {
+        guard let firstName = dictionary["firstName"] as? String,
+            let lastName = dictionary["lastName"] as? String,
+            let mediaURL = dictionary["mediaURL"] as? String,
+            let lat = dictionary["latitude"] as? Double,
+            let long = dictionary["longitude"] as? Double,
+            let objectId = dictionary["objectId"] as? String,
+            let uniqueKey = dictionary["uniqueKey"] as? String else {
+                return nil
         }
+        self.firstName = firstName
+        self.lastName = lastName
+        self.mediaURL = mediaURL
+        self.lat = lat
+        self.long = long
+        self.objectId = objectId
+        self.uniqueKey = uniqueKey
     }
     
-    return true
+    static func studentDataFromResults(_ results: [[String:Any]]) -> [UsersInfo] {
+        var usersList = [UsersInfo]()
+        
+        //Student Data Results
+        
+        for result in results {
+            if let UsersInfo = UsersInfo(dictionary: result) {
+                usersList.append(UsersInfo)
+            }
+        }
+        return usersList
+    }
+    
+    static var UsersArray : [UsersInfo] = []
+    
 }
 
