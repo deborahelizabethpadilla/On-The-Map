@@ -56,7 +56,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell")!
         let student = UsersInfo.UsersArray[indexPath.row]
         
         //Set the name and image
