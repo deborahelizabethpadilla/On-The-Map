@@ -34,6 +34,7 @@ class LinkViewController: UIViewController {
         self.mapView.setRegion(region, animated: true)
         self.mapView.centerCoordinate = pointAnnotation.coordinate
         self.mapView.pointAnnotation(pinView.annotation!)
+
         
     }
 
