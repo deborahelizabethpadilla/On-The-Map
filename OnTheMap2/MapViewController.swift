@@ -44,6 +44,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         indicator.loadingView(true)
     }
     
+    //Create Map View
+    
     func loadMap() {
         self.mapView.removeAnnotations(annotations)
         annotations = [MKPointAnnotation]()
@@ -83,6 +85,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
+    
+    //Map View Delegate
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         

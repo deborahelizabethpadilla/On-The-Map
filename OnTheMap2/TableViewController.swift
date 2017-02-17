@@ -39,7 +39,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func loadTableView() {
-        UdacityNetwork.sharedInstance().getStudentData {(success, error) in
+        UdacityNetwork.sharedInstance().getUsersData {(success, error) in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -51,6 +51,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
     }
+    
+    //Table View Data Info
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UsersInfo.UsersArray.count
     }
@@ -59,7 +62,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell")!
         let student = UsersInfo.UsersArray[indexPath.row]
         
-        //Set the name and image
+        
         cell.textLabel?.text = "\(student.firstName) \(student.lastName)"
         cell.imageView?.image = UIImage(named: "pin")
         cell.detailTextLabel?.text = student.mediaURL
