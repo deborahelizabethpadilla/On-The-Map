@@ -11,6 +11,8 @@ import MapKit
 
 struct UsersInfo {
     
+    //Student Data
+    
     let firstName: String
     let lastName: String
     let mediaURL: String
