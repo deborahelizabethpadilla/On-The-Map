@@ -10,6 +10,8 @@ import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //Table View Data
+    
     var indicator = Indicator()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
