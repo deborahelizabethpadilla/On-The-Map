@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var appDelegate: AppDelegate!
     var indicator = Indicator()
     
+    
     let invalidNetwork = "Oh Snap! You Don't Have Internet!"
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -114,13 +115,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        let touch: UITouch = touches.first as! UITouch
+        self.view.endEditing(true)
     }
     
 }
-
-
-
-
-
-
