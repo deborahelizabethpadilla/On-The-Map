@@ -80,11 +80,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="D7y-bb-piD"/>
-                                    <constraint firstAttribute="height" constant="554" id="NYf-Hd-zJw"/>
+                                    <constraint firstAttribute="height" constant="510" id="NYf-Hd-zJw"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="510" id="TO1-9v-iyo"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="ra4-OE-1Cm"/>
                                 </constraints>
@@ -96,11 +96,23 @@
                                     <constraint firstAttribute="width" constant="375" id="XJ2-PC-gLg"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="FQc-y7-dxD">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wMJ-YQ-DMR"/>
+                                    <navigationItem id="FQc-y7-dxD">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wMJ-YQ-DMR">
+                                            <connections>
+                                                <action selector="logout:" destination="W2h-em-FkY" id="iA6-DC-PeC"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem systemItem="refresh" id="sQb-X9-Obp"/>
-                                            <barButtonItem image="placeholder.png" id="srE-Nb-hHy"/>
+                                            <barButtonItem systemItem="refresh" id="sQb-X9-Obp">
+                                                <connections>
+                                                    <action selector="refreshButton:" destination="W2h-em-FkY" id="EGc-fz-83r"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="placeholder.png" id="srE-Nb-hHy">
+                                                <connections>
+                                                    <action selector="insertLocation:" destination="W2h-em-FkY" id="Ls2-jX-gF8"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
@@ -115,7 +127,7 @@
                             <constraint firstItem="Egq-rO-Eoh" firstAttribute="leading" secondItem="RjQ-qL-4Xd" secondAttribute="leading" id="cEL-tX-zqi"/>
                             <constraint firstAttribute="trailing" secondItem="Vu4-DE-AcK" secondAttribute="trailing" id="osP-on-t8p"/>
                             <constraint firstItem="Vu4-DE-AcK" firstAttribute="leading" secondItem="RjQ-qL-4Xd" secondAttribute="leading" id="qLN-eG-Qxs"/>
-                            <constraint firstItem="Vu4-DE-AcK" firstAttribute="top" secondItem="V1T-bf-wv7" secondAttribute="bottom" id="tAj-dJ-7VL"/>
+                            <constraint firstItem="Vu4-DE-AcK" firstAttribute="top" secondItem="V1T-bf-wv7" secondAttribute="bottom" constant="44" id="tAj-dJ-7VL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="map-location.png" id="daK-Ue-e7u"/>
@@ -255,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k2a-YH-1av" id="N4U-Ps-PyB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW4-pp-BKD">

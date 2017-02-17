@@ -156,7 +156,7 @@ class UdacityNetwork: NSObject {
         task.resume()
     }
     
-    func getStudentData(completionHandlerForData: @escaping (_ success: Bool, _ error: NSError?) -> Void) -> Void {
+    func getUsersData(completionHandlerForData: @escaping (_ success: Bool, _ error: NSError?) -> Void) -> Void {
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://parse.udacity.com/parse/classes/StudentLocation?order=-updatedAt&limit=100")! as URL)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import CoreLocation
 import MapKit
 
-class InfoViewController: UIViewController, UITextViewDelegate {
+class InfoViewController: UIViewController {
     
     var appDelegate: AppDelegate!
     var latitude: Double = 0.00
@@ -24,6 +23,7 @@ class InfoViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func findOTMButton(_ sender: Any) {
         self.indicator.loadingView(true)
+        
         let localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = locationText.text
         let localSearch = MKLocalSearch(request: localSearchRequest)
