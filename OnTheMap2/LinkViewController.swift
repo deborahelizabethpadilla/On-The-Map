@@ -11,6 +11,8 @@ import MapKit
 
 class LinkViewController: UIViewController {
     
+    //Map View Info
+    
     var location: String = ""
     var appDelegate: AppDelegate!
     var mediaURL: String = ""
