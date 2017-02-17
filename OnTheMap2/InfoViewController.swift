@@ -11,6 +11,8 @@ import MapKit
 
 class InfoViewController: UIViewController {
     
+    //Users Info Controller Info
+    
     var appDelegate: AppDelegate!
     var latitude: Double = 0.00
     var longitude: Double = 0.00
