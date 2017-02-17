@@ -11,6 +11,8 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
+    //Map View Info
+    
     var annotations = [MKPointAnnotation]()
     var indicator = Indicator()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
