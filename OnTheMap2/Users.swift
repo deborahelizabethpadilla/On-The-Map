@@ -41,7 +41,7 @@ struct UsersInfo {
         self.uniqueKey = uniqueKey
     }
     
-    static func studentDataFromResults(_ results: [[String:Any]]) -> [UsersInfo] {
+    static func UsersDataResults(_ results: [[String:Any]]) -> [UsersInfo] {
         var usersList = [UsersInfo]()
         
         //Users Data Results

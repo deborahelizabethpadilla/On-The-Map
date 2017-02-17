@@ -196,7 +196,7 @@ class UdacityNetwork: NSObject {
             
             if let results = parsedResult as? [String: Any] {
                 if let resultSet = results["results"] as? [[String: Any]]{
-                    UsersInfo.UsersArray = UsersInfo.studentDataFromResults(resultSet)
+                    UsersInfo.UsersArray = UsersInfo.UsersDataResults(resultSet)
                     print("yehey? \(UsersInfo.UsersArray)")
                     completionHandlerForData(true, nil)
                 }
@@ -243,7 +243,7 @@ class UdacityNetwork: NSObject {
             if let results = parsedResult as? [String: Any] {
                 if let resultSet = results["results"] as? [[String: Any]]{
                     
-                    let student =  UsersInfo.studentDataFromResults(resultSet)[0]
+                    let student =  UsersInfo.UsersDataResults(resultSet)[0]
                     self.appDelegate.willOverwrite = true
                     self.appDelegate.firstName = student.firstName
                     self.appDelegate.lastName = student.lastName
