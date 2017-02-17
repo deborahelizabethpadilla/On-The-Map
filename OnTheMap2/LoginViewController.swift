@@ -36,7 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tapOutKeyboard()
@@ -85,27 +84,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //Keyboard Notifications
     
     func subscribeToKeyboardNotifications() {
+        
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
+        
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func keyboardWillShow(_ notification: Notification) {
+        
         self.view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
     }
     
     func keyboardWillHide(_ notification: Notification) {
+        
         self.view.frame.origin.y = 0
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch: UITouch = touches.first as! UITouch
+    }
+    
 }
+
+
+
+
+
+
