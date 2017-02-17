@@ -15,8 +15,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var appDelegate: AppDelegate!
     var indicator = Indicator()
     
-    let invalidNetwork = "Oh Snap! You Don't Have Internet!"
-    
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet var usernameField: UITextField!
