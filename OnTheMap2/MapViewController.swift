@@ -69,7 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.addAnnotations(annotations)
         
     }
-
+    
     func loadMapView() {
         UdacityNetwork.sharedInstance().getUsersData() {(success, error) in
             if success {
@@ -83,5 +83,37 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let reuseId = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView!.pinTintColor = UIColor.red
+            pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            let app = UIApplication.shared
+            if let toOpen = view.annotation?.subtitle! {
+                if UdacityNetwork.sharedInstance().checkURL(toOpen){
+                    app.openURL(URL(string: toOpen)!)
+                } else {
+                    UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.InvalidLink)
+                }
+            }
+        }
+    }
+    
 }
