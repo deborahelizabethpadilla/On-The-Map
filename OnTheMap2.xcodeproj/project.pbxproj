@@ -35,7 +35,6 @@
 		502B3FD01E4AA7C6009EF4E3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */; };
 		502B3FD21E4AA7D5009EF4E3 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */; };
 		502B3FD41E4AA7E1009EF4E3 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */; };
-		502B3FDC1E4AA820009EF4E3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */; };
 		502B3FDE1E4AA83F009EF4E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */; };
 		50470A471E55736500C5E983 /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50470A461E55736500C5E983 /* LinkViewController.swift */; };
 		50FCC6161E55227E006A3805 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FCC6151E55227E006A3805 /* Network.swift */; };
@@ -74,7 +73,6 @@
 		502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		502B3FDD1E4AA83F009EF4E3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50470A461E55736500C5E983 /* LinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
 		50FCC6151E55227E006A3805 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				502B3F911E4A9EFE009EF4E3 /* AppDelegate.swift */,
 				502B3F931E4A9EFE009EF4E3 /* LoginViewController.swift */,
 				502B3FA31E4AA05F009EF4E3 /* SignupViewController.swift */,
-				502B3FDB1E4AA820009EF4E3 /* TabBarController.swift */,
 				502B3FCF1E4AA7C6009EF4E3 /* MapViewController.swift */,
 				502B3FD31E4AA7E1009EF4E3 /* InfoViewController.swift */,
 				502B3FD11E4AA7D5009EF4E3 /* TableViewController.swift */,
@@ -279,7 +276,6 @@
 			files = (
 				502B3FA41E4AA05F009EF4E3 /* SignupViewController.swift in Sources */,
 				502B3FD21E4AA7D5009EF4E3 /* TableViewController.swift in Sources */,
-				502B3FDC1E4AA820009EF4E3 /* TabBarController.swift in Sources */,
 				502B3F941E4A9EFE009EF4E3 /* LoginViewController.swift in Sources */,
 				50FCC6181E5527DA006A3805 /* NetworkAssist.swift in Sources */,
 				50FCC61A1E552F96006A3805 /* Users.swift in Sources */,

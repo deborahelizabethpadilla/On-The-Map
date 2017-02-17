@@ -332,22 +332,10 @@
             <objects>
                 <tabBarController restorationIdentifier="TabBarController" storyboardIdentifier="TabBarController" id="RDW-TZ-vAu" customClass="TabBarController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="qYX-wt-kBo">
-                            <connections>
-                                <action selector="logout:" destination="RDW-TZ-vAu" id="lfi-0I-Pb2"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="qYX-wt-kBo"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="iow-In-53p">
-                                <connections>
-                                    <action selector="addLocationButton:" destination="RDW-TZ-vAu" id="acy-Q6-mgn"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="refresh" id="C4U-Jq-tpQ">
-                                <connections>
-                                    <action selector="refreshButton:" destination="RDW-TZ-vAu" id="yh8-Vu-dak"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="iow-In-53p"/>
+                            <barButtonItem systemItem="refresh" id="C4U-Jq-tpQ"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="d0W-p3-sq8">

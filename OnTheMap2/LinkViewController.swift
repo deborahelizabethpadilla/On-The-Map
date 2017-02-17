@@ -34,7 +34,6 @@ class LinkViewController: UIViewController {
         let span = MKCoordinateSpanMake(0.01,0.01)
         let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
         
-        
         self.mapView.setRegion(region, animated: true)
         self.mapView.centerCoordinate = pointAnnotation.coordinate
         self.mapView.pointAnnotation(pinView.annotation!)
@@ -47,6 +46,7 @@ class LinkViewController: UIViewController {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         webLink.delegate = appDelegate as! UITextFieldDelegate?
+      
     }
     
     @IBAction func submitButton(_ sender: Any) {
