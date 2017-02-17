@@ -16,8 +16,7 @@ class LinkViewController: UIViewController {
     var location: String = ""
     var appDelegate: AppDelegate!
     var mediaURL: String = ""
-    
-    //Map Info
+
     
     var pointAnnotation = MKPointAnnotation()
     var latitude: Double = 0.00
