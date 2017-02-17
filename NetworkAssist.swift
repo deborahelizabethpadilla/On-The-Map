@@ -79,13 +79,13 @@ extension UdacityNetwork {
     //Error Messages
 
 struct ErrorMessage {
-    let DataError = "There was en error retrieving student data."
-    let MapError = "Could not GeoCode the String"
-    let UpdateError = "Failed to Update Location"
-    let InvalidLink = "Invalid Link"
-    let MissingLink = "Must Enter a Link"
-    let CantLogin = "The internet connection appears to be offline"
-    let InvalidEmail = "Invalid Email or Password"
+    let DataError = "Error Getting Data!"
+    let MapError = "Failed To Geocode!"
+    let UpdateError = "Failed To Update Location!"
+    let InvalidLink = "Invalid Link!"
+    let MissingLink = "Need To Enter Link!"
+    let CantLogin = "Network Connection Is Offline!"
+    let InvalidEmail = "Invalid Email Or Password!"
 }
 
 
