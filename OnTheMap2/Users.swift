@@ -11,7 +11,7 @@ import MapKit
 
 struct UsersInfo {
     
-    //Student Data
+    //Users Data
     
     let firstName: String
     let lastName: String
@@ -44,7 +44,7 @@ struct UsersInfo {
     static func studentDataFromResults(_ results: [[String:Any]]) -> [UsersInfo] {
         var usersList = [UsersInfo]()
         
-        //Student Data Results
+        //Users Data Results
         
         for result in results {
             if let UsersInfo = UsersInfo(dictionary: result) {
