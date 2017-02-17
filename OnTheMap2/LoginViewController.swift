@@ -15,7 +15,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var appDelegate: AppDelegate!
     var indicator = Indicator()
     
-    
     let invalidNetwork = "Oh Snap! You Don't Have Internet!"
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -104,7 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {
         
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         return keyboardSize.cgRectValue.height
     }
     
