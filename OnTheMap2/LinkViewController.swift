@@ -16,7 +16,6 @@ class LinkViewController: UIViewController {
     var location: String = ""
     var appDelegate: AppDelegate!
     var mediaURL: String = ""
-
     
     var pointAnnotation = MKPointAnnotation()
     var latitude: Double = 0.00
@@ -30,13 +29,12 @@ class LinkViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        let pinView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
+        let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
         let span = MKCoordinateSpanMake(0.01,0.01)
         let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
-        
         self.mapView.setRegion(region, animated: true)
         self.mapView.centerCoordinate = pointAnnotation.coordinate
-        self.mapView.pointAnnotation(pinView.annotation!)
+        self.mapView.pointAnnotation(pinAnnotationView.annotation!)
         
     }
     

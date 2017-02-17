@@ -71,7 +71,7 @@
         <!--Map View Controller-->
         <scene sceneID="aTM-di-Yrm">
             <objects>
-                <viewController id="W2h-em-FkY" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController id="W2h-em-FkY" customClass="MapViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V1T-bf-wv7"/>
                         <viewControllerLayoutGuide type="bottom" id="x43-OB-uu5"/>
@@ -144,7 +144,7 @@
         <!--Info View Controller-->
         <scene sceneID="Kwd-pa-BTC">
             <objects>
-                <viewController id="ahG-sh-N4N" customClass="InfoViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ahG-sh-N4N" customClass="InfoViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WxC-Rd-EvA"/>
                         <viewControllerLayoutGuide type="bottom" id="mKQ-V9-s0r"/>
@@ -201,7 +201,7 @@
         <!--Link View Controller-->
         <scene sceneID="oyz-yw-bkc">
             <objects>
-                <viewController restorationIdentifier="LinkViewController" storyboardIdentifier="LinkViewController" id="ze8-Kg-RWx" customClass="LinkViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LinkViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ze8-Kg-RWx" customClass="LinkViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j1K-Pz-jo3"/>
                         <viewControllerLayoutGuide type="bottom" id="5hx-XP-ZW3"/>
@@ -257,7 +257,7 @@
         <!--Table View Controller-->
         <scene sceneID="e09-uq-azF">
             <objects>
-                <tableViewController restorationIdentifier="TableViewController" storyboardIdentifier="TableViewController" id="9xP-Rr-u7h" userLabel="Table View Controller" customClass="TableViewController" sceneMemberID="viewController">
+                <tableViewController id="9xP-Rr-u7h" userLabel="Table View Controller" customClass="TableViewController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="umi-fz-NiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +330,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1NF-Dw-mhz">
             <objects>
-                <tabBarController restorationIdentifier="TabBarController" storyboardIdentifier="TabBarController" id="RDW-TZ-vAu" customClass="TabBarController" customModule="OnTheMap2" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDW-TZ-vAu" customClass="TabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="qYX-wt-kBo"/>
                         <rightBarButtonItems>
