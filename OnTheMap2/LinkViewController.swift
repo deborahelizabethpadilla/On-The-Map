@@ -11,17 +11,17 @@ import MapKit
 
 class LinkViewController: UIViewController {
     
-    //Map View Info
+    //Map Data Info
     
     var location: String = ""
     var appDelegate: AppDelegate!
     var mediaURL: String = ""
-    
+
     var pointAnnotation = MKPointAnnotation()
     var latitude: Double = 0.00
     var longitude: Double = 0.00
     
-    let locationDelegate = addLocationDelegate()
+    let inputDelegate = addLocationDelegate()
     
     @IBOutlet var mapView: LinkViewController!
     @IBOutlet var webLink: UITextField!
@@ -32,6 +32,7 @@ class LinkViewController: UIViewController {
         let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
         let span = MKCoordinateSpanMake(0.01,0.01)
         let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
+        
         self.mapView.setRegion(region, animated: true)
         self.mapView.centerCoordinate = pointAnnotation.coordinate
         self.mapView.pointAnnotation(pinAnnotationView.annotation!)

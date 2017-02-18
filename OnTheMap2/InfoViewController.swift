@@ -35,14 +35,16 @@ class InfoViewController: UIViewController {
                 self.indicator.loadingView(false)
                 return
             }
+            
             let pointAnnotation = MKPointAnnotation()
-            pointAnnotation.title = self.locationText.text
+            pointAnnotation.title = self.locationText.text!
             pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
             
             self.latitude = localSearchResponse!.boundingRegion.center.latitude
             self.longitude = localSearchResponse!.boundingRegion.center.longitude
             
             let controller = self.storyboard!.instantiateViewController(withIdentifier: "LinkViewController") as! LinkViewController
+            controller.location = self.locationText.text!
             controller.pointAnnotation = pointAnnotation
             controller.latitude = self.latitude
             controller.longitude = self.longitude
