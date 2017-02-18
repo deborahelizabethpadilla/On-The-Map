@@ -69,13 +69,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //Login To Udacity
     
     func loginwithUdacity() {
-        UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (successful, errorMessage, error) in
-            if successful {
-                UdacityNetwork.sharedInstance().getUserData(userID: self.appDelegate.userID, completionHandlerForAuth: { (successful, error) in
-                    
-                })
+        UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (success, errormsg, error) in
+            if success {
+                UdacityNetwork.sharedInstance().getUserData(userID: self.appDelegate.userID) { (success, error) in
+                    DispatchQueue.main.async {
+                        if success {
+                            self.completeLogin()
+                        } else {
+                            UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.CantLogin)
+                            self.indicator.loadingView(false)
+                            
+                        }
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    UdacityNetwork.sharedInstance().alertError(self, error: errormsg!)
+                    self.indicator.loadingView(false)
+                }
             }
         }
+        
+    }
+    
+    fileprivate func completeLogin() {
+        UdacityNetwork.sharedInstance().isExisting(uniqueKey: self.appDelegate.userID)
+        UdacityNetwork.sharedInstance().navigateTabBar(self)
         
     }
     
@@ -113,6 +132,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
+        return true;
     }
     
 }
