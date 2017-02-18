@@ -16,7 +16,7 @@ class LinkViewController: UIViewController {
     var location: String = ""
     var appDelegate: AppDelegate!
     var mediaURL: String = ""
-
+    
     var pointAnnotation = MKPointAnnotation()
     var latitude: Double = 0.00
     var longitude: Double = 0.00
@@ -34,7 +34,7 @@ class LinkViewController: UIViewController {
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         webLink.delegate = appDelegate as! UITextFieldDelegate?
-      
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,11 +91,11 @@ class LinkViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
-    }
+}
 
 
 
