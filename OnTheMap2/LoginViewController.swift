@@ -62,6 +62,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButton(_ sender: Any) {
         dismissKeyboard()
         self.view.endEditing(true)
+        loginwithUdacity()
+        indicator.loadingView(true)
         
         
     }

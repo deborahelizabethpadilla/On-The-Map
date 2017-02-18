@@ -267,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k2a-YH-1av" id="N4U-Ps-PyB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW4-pp-BKD">
@@ -330,7 +330,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1NF-Dw-mhz">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDW-TZ-vAu" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarMapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDW-TZ-vAu" customClass="TabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="qYX-wt-kBo"/>
                         <rightBarButtonItems>

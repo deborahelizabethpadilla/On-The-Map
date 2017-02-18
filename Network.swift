@@ -47,35 +47,35 @@ class UdacityNetwork: NSObject {
             }
             
             guard let data = data else {
-                handleError(error: "No data was returned by the request!", errormsg: self.appDelegate.errorMessage.CantLogin)
+                handleError(error: "No Data Was Returned By The Request!", errormsg: self.appDelegate.errorMessage.CantLogin)
                 return
             }
             
             //Parse Data
             
             let stringData = String(data: data, encoding: String.Encoding.utf8)
-            print(stringData ?? "mali din")
+            print(stringData ?? "Done!")
             
             let newData = data.subdata(in: Range(uncheckedBounds: (5, data.count)))
             let stringnewData = String(data: newData, encoding: String.Encoding.utf8)
-            print(stringnewData ?? "mali!")
+            print(stringnewData ?? "Done!")
             
             let parsedResult = try? JSONSerialization.jsonObject(with: newData, options: .allowFragments)
             
             guard let dictionary = parsedResult as? [String: Any] else {
-                handleError(error: "Cannot parse dictionary", errormsg: self.appDelegate.errorMessage.CantLogin)
+                handleError(error: "Can't Parse Dictionary", errormsg: self.appDelegate.errorMessage.CantLogin)
                 return
             }
             
             guard let account = dictionary["account"] as? [String:Any] else {
-                handleError(error: "Cannot find key 'account' in \(parsedResult)", errormsg: self.appDelegate.errorMessage.CantLogin)
+                handleError(error: "Cannot Find Key 'Account' In \(parsedResult)", errormsg: self.appDelegate.errorMessage.CantLogin)
                 return
             }
             
             //Utilize Data
             
             guard let userID = account["key"] as? String else {
-                handleError(error: "Cannot find key 'key' in \(account)", errormsg: self.appDelegate.errorMessage.CantLogin)
+                handleError(error: "Cannot Find Key 'Key' In \(account)", errormsg: self.appDelegate.errorMessage.CantLogin)
                 return
             }
             
@@ -106,12 +106,12 @@ class UdacityNetwork: NSObject {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError(error: "Your request returned a status code other than 2xx!")
+                sendError(error: "Your Request Returned A Status Code Other Than 2xx!")
                 return
             }
             
             guard let data = data else {
-                sendError(error: "No data was returned by the request!")
+                sendError(error: "No Data Was Returned By The Request!")
                 return
             }
             
@@ -123,30 +123,30 @@ class UdacityNetwork: NSObject {
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: newData, options: .allowFragments)
             } catch {
-                sendError(error: "Could not parse the data as JSON: '\(data)'")
+                sendError(error: "Could Not Parse The Data As JSON: '\(data)'")
                 return
             }
             
             guard let dictionary = parsedResult as? [String: Any] else {
-                sendError(error: "Cannot parse")
+                sendError(error: "Cannot Parse")
                 return
             }
             
             
             guard let user = dictionary["user"] as? [String: Any] else {
-                sendError(error: "Cannot find key 'user' in \(parsedResult)")
+                sendError(error: "Cannot Find Key 'user' In \(parsedResult)")
                 return
             }
             
             guard let lastName = user["last_name"] as? String else {
-                sendError(error: "Cannot find key 'key' in \(user)")
+                sendError(error: "Cannot Find Key 'key' In \(user)")
                 return
             }
             
             //Utilize Data
             
             guard let firstName = user["first_name"] as? String else {
-                sendError(error: "Cannot find key 'key' in \(user)")
+                sendError(error: "Cannot Find Key 'key' In \(user)")
                 return
             }
             self.appDelegate.lastName = lastName
@@ -171,17 +171,17 @@ class UdacityNetwork: NSObject {
             }
             
             guard (error == nil) else {
-                sendError(error: "There was an error with your request: \(error)")
+                sendError(error: "There Was An Error With Your Request: \(error)")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError(error: "Your request returned a status code other than 2xx!")
+                sendError(error: "Your Request Returned A Status Code Other Than 2xx!")
                 return
             }
             
             guard let data = data else {
-                sendError(error: "No data was returned by the request!")
+                sendError(error: "No Data Was Returned By The Request!")
                 return
             }
             
@@ -190,7 +190,7 @@ class UdacityNetwork: NSObject {
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             } catch {
-                sendError(error: "Could not parse the data as JSON: '\(data)'")
+                sendError(error: "Could Not Parse The Data As JSON: '\(data)'")
                 return
             }
             
@@ -201,7 +201,7 @@ class UdacityNetwork: NSObject {
                     completionHandlerForData(true, nil)
                 }
             } else {
-                sendError(error: "sorry change me")
+                sendError(error: "Sorry! Edit!")
             }
             
         }
@@ -232,6 +232,7 @@ class UdacityNetwork: NSObject {
                 return
             }
             
+            //Parse Data
             let parsedResult: Any!
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
@@ -239,22 +240,24 @@ class UdacityNetwork: NSObject {
                 print("Could not parse the data as JSON: '\(data)'")
                 return
             }
+          
             
             if let results = parsedResult as? [String: Any] {
                 if let resultSet = results["results"] as? [[String: Any]]{
                     
-                    let student =  UsersInfo.UsersDataResults(resultSet)[0]
+                    let user =  UsersInfo.UsersDataResults(resultSet)[0]
                     self.appDelegate.willOverwrite = true
-                    self.appDelegate.firstName = student.firstName
-                    self.appDelegate.lastName = student.lastName
-                    self.appDelegate.objectId = student.objectId
-                    self.appDelegate.uniqueKey = student.uniqueKey
+                    self.appDelegate.firstName = user.firstName
+                    self.appDelegate.lastName = user.lastName
+                    self.appDelegate.objectId = user.objectId
+                    self.appDelegate.uniqueKey = user.uniqueKey
                     
                 }
             }
             
-        }
+    }
         task.resume()
+        
     }
     
     func logoutID(controller: UIViewController) {
@@ -273,20 +276,20 @@ class UdacityNetwork: NSObject {
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
+                print("There Was An Error With Your Request: \(error)")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                print("Your Request Returned A Status Code Other Than 2xx!")
                 return
             }
             
             guard data != nil else {
-                print("No data was returned by the request!")
+                print("No Data Was Returned By The Request!")
                 return
             }
-            print("Logged out")
+            print("Logged Out")
         }
         task.resume()
     }
@@ -310,18 +313,18 @@ class UdacityNetwork: NSObject {
             }
             
             guard (error == nil) else {
-                sendError(error: "There was an error with your request: \(error)")
+                sendError(error: "There Was An Error With Your Request: \(error)")
                 return
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError(error: "Your request returned a status code other than 2xx!")
+                sendError(error: "Your Request Returned A Status Code Other Than 2xx!")
                 return
             }
             
             
             guard data != nil else {
-                sendError(error: "No data was returned by the request!")
+                sendError(error: "No Data Was Returned By The Request!")
                 return
             }
             completionHandlerForPost(true, nil)
@@ -354,12 +357,12 @@ class UdacityNetwork: NSObject {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError(error: "Your request returned a status code other than 2xx!")
+                sendError(error: "Your Request Returned A Status Code Other Than 2xx!")
                 return
             }
             
             guard data != nil else {
-                sendError(error: "No data was returned by the request!")
+                sendError(error: "No Data Was Returned By The Request!")
                 return
             }
             completionHandlerForPut(true, nil)
