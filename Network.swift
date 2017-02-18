@@ -212,11 +212,12 @@ class UdacityNetwork: NSObject {
         
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22\(uniqueKey)%22%7D"
         let url = NSURL(string: urlString)
-        let request = NSMutableURLRequest(url: url! as URL)
+        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = URLSession.shared
-        let task = session.dataTask(with: request as URLRequest) { data, response, error in
+        URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+            print("Entered The completionHandler")
             
             guard (error == nil) else {
                 self.appDelegate.willOverwrite = false
@@ -247,6 +248,7 @@ class UdacityNetwork: NSObject {
                 if let resultSet = results["results"] as? [[String: Any]]   {
                     
                     let user =  UsersInfo.UsersDataResults(resultSet)[0]
+                    
                     self.appDelegate.willOverwrite = true
                     self.appDelegate.firstName = user.firstName
                     self.appDelegate.lastName = user.lastName
@@ -254,10 +256,11 @@ class UdacityNetwork: NSObject {
                     self.appDelegate.uniqueKey = user.uniqueKey
                     
                 }
+                
             }
             
     }
-        task.resume()
+        .resume()
         
     }
     
