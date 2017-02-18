@@ -23,7 +23,8 @@ class LinkViewController: UIViewController {
     
     let inputDelegate = addLocationDelegate()
     
-    @IBOutlet var mapView: LinkViewController!
+    @IBOutlet var mapView: MKMapView!
+    
     @IBOutlet var webLink: UITextField!
     
     
@@ -37,13 +38,16 @@ class LinkViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         
         let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
-        let span = MKCoordinateSpanMake(0.01,0.01)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
         let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
         self.mapView.setRegion(region, animated: true)
         self.mapView.centerCoordinate = pointAnnotation.coordinate
-        self.mapView.pointAnnotation(pinAnnotationView.annotation!)
+        self.mapView.addAnnotation(pinAnnotationView.annotation!)
+        
     }
     
     @IBAction func submitButton(_ sender: Any) {
