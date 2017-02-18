@@ -209,6 +209,7 @@ class UdacityNetwork: NSObject {
     }
     
     func isExisting(uniqueKey: String) {
+        
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22\(uniqueKey)%22%7D"
         let url = NSURL(string: urlString)
         let request = NSMutableURLRequest(url: url! as URL)
@@ -237,13 +238,13 @@ class UdacityNetwork: NSObject {
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             } catch {
-                print("Could not parse the data as JSON: '\(data)'")
+                print("Could Not Parse The Data As JSON: '\(data)'")
                 return
             }
           
             
             if let results = parsedResult as? [String: Any] {
-                if let resultSet = results["results"] as? [[String: Any]]{
+                if let resultSet = results["results"] as? [[String: Any]]   {
                     
                     let user =  UsersInfo.UsersDataResults(resultSet)[0]
                     self.appDelegate.willOverwrite = true
