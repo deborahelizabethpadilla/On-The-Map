@@ -80,15 +80,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="D7y-bb-piD"/>
-                                    <constraint firstAttribute="height" constant="510" id="NYf-Hd-zJw"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="510" id="TO1-9v-iyo"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="ra4-OE-1Cm"/>
-                                </constraints>
-                            </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vu4-DE-AcK">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <constraints>
@@ -117,6 +108,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Egq-rO-Eoh">
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="D7y-bb-piD"/>
+                                    <constraint firstAttribute="height" constant="510" id="NYf-Hd-zJw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="510" id="TO1-9v-iyo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="ra4-OE-1Cm"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnC-Yi-tJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-327"/>
+            <point key="canvasLocation" x="813.60000000000002" y="-327.88605697151428"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Kwd-pa-BTC">

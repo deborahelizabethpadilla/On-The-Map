@@ -36,7 +36,7 @@ class Indicator: UIActivityIndicatorView {
 extension UdacityNetwork {
     
     func logout(_ controller: UIViewController) {
-        logoutID(controller: controller)
+        logout(controller)
         controller.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
