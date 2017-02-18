@@ -26,18 +26,6 @@ class LinkViewController: UIViewController {
     @IBOutlet var mapView: LinkViewController!
     @IBOutlet var webLink: UITextField!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
-        let span = MKCoordinateSpanMake(0.01,0.01)
-        let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
-        
-        self.mapView.setRegion(region, animated: true)
-        self.mapView.centerCoordinate = pointAnnotation.coordinate
-        self.mapView.pointAnnotation(pinAnnotationView.annotation!)
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +34,16 @@ class LinkViewController: UIViewController {
         
         webLink.delegate = appDelegate as! UITextFieldDelegate?
       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let pinAnnotationView = MKPinAnnotationView(annotation: pointAnnotation, reuseIdentifier: nil)
+        let span = MKCoordinateSpanMake(0.01,0.01)
+        let region = MKCoordinateRegion(center: pointAnnotation.coordinate, span: span)
+        self.mapView.setRegion(region, animated: true)
+        self.mapView.centerCoordinate = pointAnnotation.coordinate
+        self.mapView.pointAnnotation(pinAnnotationView.annotation!)
     }
     
     @IBAction func submitButton(_ sender: Any) {
@@ -86,7 +84,6 @@ class LinkViewController: UIViewController {
                 UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.UpdateError)
             }
         }
-        
     }
     
     @IBAction func cancelButton(_ sender: Any) {
