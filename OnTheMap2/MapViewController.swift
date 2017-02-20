@@ -39,7 +39,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func logout(_ sender: Any) {
-        UdacityNetwork.sharedInstance().logoutID(controller: self)
+        UdacityNetwork.sharedInstance().logout(self)
     }
     
     @IBAction func refreshButton(_ sender: Any) {
@@ -94,11 +94,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
+        self.mapView.delegate = self
+        
         let reuseId = "pin"
         
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-        
-         UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.InvalidLink)
         
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
