@@ -18,29 +18,36 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var tableView: UITableView!
     
     @IBAction func refreshButton(_ sender: Any) {
+        
         indicator.loadingView(true)
         loadTableView()
     }
     @IBAction func addLocation(_ sender: Any) {
+        
         UdacityNetwork.sharedInstance().addLocation(self)
     }
     @IBAction func logoutButton(_ sender: Any) {
+        
         UdacityNetwork.sharedInstance().logout(self)
+        self.tabBarController?.dismiss(animated: true, completion: nil)
         
     }
     
     override func viewDidLoad() {
+        
         indicator.center = self.view.center
         self.view.addSubview(indicator)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(true)
         indicator.loadingView(true)
         loadTableView()
     }
     
     func loadTableView() {
+        
         UdacityNetwork.sharedInstance().getUsersData {(success, error) in
             if success {
                 DispatchQueue.main.async {
@@ -57,10 +64,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     //Table View Data Info
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return UsersInfo.UsersArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell")!
         let student = UsersInfo.UsersArray[indexPath.row]
         
@@ -74,7 +83,10 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let student = UsersInfo.UsersArray[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let app = UIApplication.shared
         if UdacityNetwork.sharedInstance().checkURL(student.mediaURL){
             app.openURL(URL(string: student.mediaURL)!)
