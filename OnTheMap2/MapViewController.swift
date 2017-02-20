@@ -98,6 +98,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         
+         UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.InvalidLink)
+        
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
@@ -105,6 +107,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         else {
+            
             pinView!.annotation = annotation
         }
         
