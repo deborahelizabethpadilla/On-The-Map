@@ -33,7 +33,7 @@ class LinkViewController: UIViewController {
         
         appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        webLink.delegate = appDelegate as! UITextFieldDelegate?
+        webLink.delegate = inputDelegate
         
     }
     
