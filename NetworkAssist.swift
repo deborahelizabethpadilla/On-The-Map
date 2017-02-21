@@ -106,14 +106,17 @@ extension UdacityNetwork {
 class addLocationDelegate: NSObject, UITextFieldDelegate {
     
     override init() {
+        
         super.init()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         textField.text = ""
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         textField.resignFirstResponder()
         return true
     }
