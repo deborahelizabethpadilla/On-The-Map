@@ -210,7 +210,7 @@ class UdacityNetwork: NSObject {
     
     func isExisting(uniqueKey: String) {
         
-        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22\(uniqueKey)%22%7D"
+        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22/\(uniqueKey)%22%7D"
         let url = NSURL(string: urlString)
         let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
