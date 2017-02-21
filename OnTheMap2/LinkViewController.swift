@@ -102,8 +102,9 @@ class LinkViewController: UIViewController {
     
     func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
         
-        self.view.endEditing(true)
-        return false
+        webLink.resignFirstResponder()
+        
+        return true
     }
     
 }

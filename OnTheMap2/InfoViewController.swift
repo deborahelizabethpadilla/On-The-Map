@@ -76,8 +76,9 @@ class InfoViewController: UIViewController {
     
     func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
         
-        self.view.endEditing(true)
-        return false
+        locationText.resignFirstResponder()
+        
+        return true
     }
     
 }
