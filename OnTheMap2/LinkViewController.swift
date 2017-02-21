@@ -84,8 +84,7 @@ class LinkViewController: UIViewController {
                     }
                     
                 }
-            } else {
-                UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.UpdateError)
+           
             }
         }
     
