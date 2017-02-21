@@ -464,11 +464,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HlC-Go-fqW" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" constant="143" id="0FZ-Fy-PzK"/>
                             <constraint firstItem="mqa-fa-TPG" firstAttribute="centerX" secondItem="HlC-Go-fqW" secondAttribute="centerX" id="8RR-Pb-Znn"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="trailing" secondItem="5xf-3j-MHi" secondAttribute="trailingMargin" id="CCx-sP-6hm"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="leading" secondItem="8Uf-0B-9ob" secondAttribute="leading" id="ISg-WI-jgR"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" id="Nho-Ry-zgH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6st-yh-lD0" secondAttribute="trailing" constant="75" id="Q5r-q7-y8u"/>
                             <constraint firstItem="mqa-fa-TPG" firstAttribute="top" secondItem="8nc-cK-2ai" secondAttribute="bottom" constant="21" id="QJ8-E3-32x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8nc-cK-2ai" secondAttribute="trailing" constant="149" id="ROB-gK-GhX"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="trailing" secondItem="8Uf-0B-9ob" secondAttribute="trailing" id="Uki-lW-OKP"/>
                             <constraint firstItem="udc-LZ-gxS" firstAttribute="top" secondItem="hVi-gc-i20" secondAttribute="bottom" constant="39" id="YRW-1s-54t"/>
                             <constraint firstItem="9Ze-Sq-04P" firstAttribute="top" secondItem="udc-LZ-gxS" secondAttribute="bottom" constant="39" id="Yg7-V7-FBK"/>
@@ -481,7 +484,9 @@
                             <constraint firstItem="6st-yh-lD0" firstAttribute="top" secondItem="mqa-fa-TPG" secondAttribute="bottom" constant="8" symbolic="YES" id="oDF-Yh-wnf"/>
                             <constraint firstItem="8Uf-0B-9ob" firstAttribute="top" secondItem="9Ze-Sq-04P" secondAttribute="bottom" constant="30" id="p7t-uM-7zq"/>
                             <constraint firstItem="6st-yh-lD0" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leadingMargin" constant="83" id="qcc-hD-49d"/>
+                            <constraint firstItem="6st-yh-lD0" firstAttribute="top" secondItem="Sv4-Bd-jGQ" secondAttribute="bottom" constant="466" id="s3r-ud-OVr"/>
                             <constraint firstItem="hVi-gc-i20" firstAttribute="top" secondItem="Sv4-Bd-jGQ" secondAttribute="bottom" constant="33" id="sEO-9l-vEo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HlC-Go-fqW" secondAttribute="trailing" constant="143" id="tOL-O0-acu"/>
                             <constraint firstItem="8nc-cK-2ai" firstAttribute="leading" secondItem="5xf-3j-MHi" secondAttribute="leading" constant="168" id="wP8-iQ-hhx"/>
                         </constraints>
                     </view>
