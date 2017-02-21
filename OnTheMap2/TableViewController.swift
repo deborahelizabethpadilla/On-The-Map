@@ -29,7 +29,6 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func logoutButton(_ sender: Any) {
         
         UdacityNetwork.sharedInstance().logout(self)
-        self.tabBarController?.dismiss(animated: true, completion: nil)
         
     }
     

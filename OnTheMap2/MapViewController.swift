@@ -35,14 +35,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func insertLocation(_ sender: Any) {
+        
         UdacityNetwork.sharedInstance().addLocation(self)
     }
     
     @IBAction func logout(_ sender: Any) {
+        
         UdacityNetwork.sharedInstance().logout(self)
     }
     
     @IBAction func refreshButton(_ sender: Any) {
+        
         indicator.loadingView(true)
         
         loadMapView()
