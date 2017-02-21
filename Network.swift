@@ -210,14 +210,13 @@ class UdacityNetwork: NSObject {
     
     func isExisting(uniqueKey: String) {
         
-        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22/\(uniqueKey)%22%7D"
+        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation?where=%7B%22uniqueKey%22%3A%22\(uniqueKey)%22%7D"
         let url = NSURL(string: urlString)
-        let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL)
+        let request = NSMutableURLRequest(url: url! as URL)
         request.addValue("QrX47CA9cyuGewLdsL7o5Eb8iug6Em8ye0dnAbIr", forHTTPHeaderField: "X-Parse-Application-Id")
         request.addValue("QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY", forHTTPHeaderField: "X-Parse-REST-API-Key")
         let session = URLSession.shared
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-            print("Entered The completionHandler")
+        let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard (error == nil) else {
                 self.appDelegate.willOverwrite = false
@@ -234,19 +233,16 @@ class UdacityNetwork: NSObject {
                 return
             }
             
-            //Parse Data
-            
             let parsedResult: Any!
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             } catch {
-                print("Could Not Parse The Data As JSON: '\(data)'")
+                print("Could not parse the data as JSON: '\(data)'")
                 return
             }
-          
             
             if let results = parsedResult as? [String: Any] {
-                if let resultSet = results["results"] as? [[String: Any]] {
+                if let resultSet = results["results"] as? [[String: Any]]{
                     
                     let user =  UsersInfo.UsersDataResults(resultSet)[0]
                     self.appDelegate.willOverwrite = true
@@ -337,7 +333,7 @@ class UdacityNetwork: NSObject {
     }
     
     func updateUserData(student: UsersInfo, location: String, completionHandlerForPut: @escaping (_ success: Bool, _ error: NSError?)->Void) {
-        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation\(student.objectId)"
+        let urlString = "https://parse.udacity.com/parse/classes/StudentLocation/\(student.objectId)"
         let url = NSURL(string: urlString)
         let request = NSMutableURLRequest(url: url! as URL)
         request.httpMethod = "PUT"
