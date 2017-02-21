@@ -65,7 +65,7 @@ extension UdacityNetwork {
     //Navigation
     
     func navigateTabBar(_ controller: UIViewController) {
-        let TabBarController = controller.storyboard!.instantiateViewController(withIdentifier: "TabBarMapController") as! UITabBarController
+        let TabBarController = controller.storyboard!.instantiateViewController(withIdentifier: "MapTabBarController") as! UITabBarController
         controller.present(TabBarController, animated: true, completion: nil)
     }
     

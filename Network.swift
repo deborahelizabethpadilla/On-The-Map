@@ -235,6 +235,7 @@ class UdacityNetwork: NSObject {
             }
             
             //Parse Data
+            
             let parsedResult: Any!
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments)

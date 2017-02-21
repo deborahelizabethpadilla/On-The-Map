@@ -184,7 +184,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="1NF-Dw-mhz">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarMapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDW-TZ-vAu" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarMapController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RDW-TZ-vAu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xqd-cm-9eb">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="qYX-wt-kBo"/>
                         <rightBarButtonItems>

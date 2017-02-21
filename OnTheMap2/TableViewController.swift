@@ -40,10 +40,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         super.viewWillAppear(true)
+        
         indicator.loadingView(true)
         loadTableView()
+        print(UsersInfo.UsersArray.count)
     }
     
     func loadTableView() {
@@ -70,26 +71,26 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell")!
-        let student = UsersInfo.UsersArray[indexPath.row]
+        let infoCell = tableView.dequeueReusableCell(withIdentifier: "infoCell")!
+        let user = UsersInfo.UsersArray[indexPath.row]
         
         
-        cell.textLabel?.text = "\(student.firstName) \(student.lastName)"
-        cell.imageView?.image = UIImage(named: "pin")
-        cell.detailTextLabel?.text = student.mediaURL
+        infoCell.textLabel?.text = "\(user.firstName) \(user.lastName)"
+        infoCell.imageView?.image = UIImage(named: "pin")
+        infoCell.detailTextLabel?.text = user.mediaURL
         
-        return cell
+        return infoCell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let student = UsersInfo.UsersArray[indexPath.row]
+        let user = UsersInfo.UsersArray[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         
         let app = UIApplication.shared
-        if UdacityNetwork.sharedInstance().checkURL(student.mediaURL){
-            app.openURL(URL(string: student.mediaURL)!)
+        if UdacityNetwork.sharedInstance().checkURL(user.mediaURL){
+            app.openURL(URL(string: user.mediaURL)!)
         } else {
             UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.InvalidLink)
         }
