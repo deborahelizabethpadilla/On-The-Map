@@ -37,7 +37,6 @@ extension UdacityNetwork {
     
     func logout(_ controller: UIViewController) {
         
-        logout(controller)
         controller.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         
     }
