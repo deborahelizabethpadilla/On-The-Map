@@ -44,7 +44,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         indicator.loadingView(true)
         loadTableView()
-        print(UsersInfo.UsersArray.count)
+        print(tableView(tableView, numberOfRowsInSection: 100))
     }
     
     func loadTableView() {
@@ -66,7 +66,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return UsersInfo.UsersArray.count
+        if UsersInfo.UsersArray.count<100 {
+            return UsersInfo.UsersArray.count
+        }
+        else {
+            
+            return 100
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,6 +111,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
+        
         return true;
     }
     
