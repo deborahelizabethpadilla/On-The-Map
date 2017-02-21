@@ -62,7 +62,7 @@ class LinkViewController: UIViewController {
         } else {
             if UdacityNetwork.sharedInstance().checkURL(webLink.text!) == true {
                 if appDelegate.willOverwrite {
-                    UdacityNetwork.sharedInstance().updateStudentData(student: userData!, location: location) { success, result in
+                    UdacityNetwork.sharedInstance().updateUserData(student: userData!, location: location) { success, result in
                         DispatchQueue.main.async{
                             if success {
                                 UdacityNetwork.sharedInstance().navigateTabBar(self)

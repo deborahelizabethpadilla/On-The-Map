@@ -314,7 +314,7 @@ class UdacityNetwork: NSObject {
             func sendError(error: String) {
                 print(error)
                 let userInfo = [NSLocalizedDescriptionKey: error]
-                completionHandlerForPost(false, NSError(domain: "postNewStudentData", code: 1, userInfo: userInfo))
+                completionHandlerForPost(false, NSError(domain: "postNew", code: 1, userInfo: userInfo))
             }
             
             guard (error == nil) else {
@@ -338,7 +338,7 @@ class UdacityNetwork: NSObject {
         
     }
     
-    func updateStudentData(student: UsersInfo, location: String, completionHandlerForPut: @escaping (_ success: Bool, _ error: NSError?)->Void) {
+    func updateUserData(student: UsersInfo, location: String, completionHandlerForPut: @escaping (_ success: Bool, _ error: NSError?)->Void) {
         let urlString = "https://parse.udacity.com/parse/classes/StudentLocation\(student.objectId)"
         let url = NSURL(string: urlString)
         let request = NSMutableURLRequest(url: url! as URL)
