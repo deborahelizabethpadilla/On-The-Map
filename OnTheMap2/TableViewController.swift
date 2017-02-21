@@ -111,8 +111,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
-        
-        return true;
+        self.view.endEditing(true)
+        return false
     }
     
 }
