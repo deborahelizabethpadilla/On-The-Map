@@ -28,7 +28,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     @IBAction func logoutButton(_ sender: Any) {
         
-        UdacityNetwork.sharedInstance().logout(self)
+        UdacityNetwork.sharedInstance().logoutID(controller: self)
         
     }
     

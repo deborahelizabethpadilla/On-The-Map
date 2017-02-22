@@ -41,7 +41,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func logout(_ sender: Any) {
         
-        UdacityNetwork.sharedInstance().logout(self)
+        UdacityNetwork.sharedInstance().logoutID(controller: self)
     }
     
     @IBAction func refreshButton(_ sender: Any) {

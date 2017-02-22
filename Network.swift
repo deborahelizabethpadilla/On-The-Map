@@ -17,7 +17,7 @@ class UdacityNetwork: NSObject {
         super.init()
     }
     
-    //Udacity Log In
+    //Login To Udacity
     
     func getUdacityData(username: String, password: String, completionHandlerForAuth: @escaping (_ success: Bool,_ errormsg: String?, _ error: NSError?) -> Void) {
         
@@ -275,7 +275,7 @@ class UdacityNetwork: NSObject {
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             
             guard (error == nil) else {
-                print("There Was An Error With Your Request: \(error)")
+                print("There Was An Error With Your Request: \(String(describing: error))")
                 return
             }
             

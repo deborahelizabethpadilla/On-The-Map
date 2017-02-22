@@ -339,30 +339,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rqm-6X-9Gz" id="uky-FE-1zU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPM-tv-KY9">
-                                                    <rect key="frame" x="8" y="22" width="73" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c41-2K-SrB">
-                                                    <rect key="frame" x="8" y="0.0" width="73" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="73" id="7of-ft-hxw"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="c41-2K-SrB" firstAttribute="trailing" secondItem="WPM-tv-KY9" secondAttribute="trailing" id="3KX-dX-JZl"/>
-                                                <constraint firstItem="WPM-tv-KY9" firstAttribute="top" secondItem="c41-2K-SrB" secondAttribute="bottom" constant="1" id="D4E-It-NFg"/>
-                                                <constraint firstItem="c41-2K-SrB" firstAttribute="leading" secondItem="uky-FE-1zU" secondAttribute="leadingMargin" id="jHM-ZG-na3"/>
-                                                <constraint firstItem="c41-2K-SrB" firstAttribute="top" secondItem="uky-FE-1zU" secondAttribute="top" id="msC-x5-HwH"/>
-                                                <constraint firstItem="c41-2K-SrB" firstAttribute="leading" secondItem="WPM-tv-KY9" secondAttribute="leading" id="y79-XG-JQv"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>

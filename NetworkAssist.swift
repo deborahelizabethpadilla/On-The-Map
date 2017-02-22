@@ -37,8 +37,7 @@ extension UdacityNetwork {
     
     func logout(_ controller: UIViewController) {
         
-        controller.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
-        
+    
     }
     
     func addLocation(_ controller: UIViewController) {
@@ -75,7 +74,6 @@ extension UdacityNetwork {
         }
         return false
     }
-}
 
     //Error Messages
 
@@ -87,6 +85,8 @@ struct ErrorMessage {
     let MissingLink = "Need To Enter Link!"
     let CantLogin = "Network Connection Is Offline!"
     let InvalidEmail = "Invalid Email Or Password!"
+}
+    
 }
 
 

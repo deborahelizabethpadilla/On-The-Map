@@ -60,6 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func loginButton(_ sender: Any) {
+        
         dismissKeyboard()
         self.view.endEditing(true)
         loginwithUdacity()
@@ -67,8 +68,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-    //Login To Udacity
     
     func loginwithUdacity() {
         UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (success, errormsg, error) in
@@ -145,3 +144,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
+
