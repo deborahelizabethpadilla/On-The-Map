@@ -76,6 +76,7 @@ class LinkViewController: UIViewController {
                    UdacityNetwork.sharedInstance().postNew(student: userData!, location: location) {success, result in
                         DispatchQueue.main.async{
                             if success {
+                                
                                self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
                                 
                             } else {

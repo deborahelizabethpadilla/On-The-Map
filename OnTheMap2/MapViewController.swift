@@ -88,6 +88,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 }
                 
             } else {
+                
+                self.indicator.stopAnimating()
                 UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.DataError)
             }
         }
