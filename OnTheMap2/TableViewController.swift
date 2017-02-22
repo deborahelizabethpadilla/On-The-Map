@@ -56,6 +56,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
                 }
                 
             } else {
+                
+                self.indicator.stopAnimating()
+                
                 UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.DataError)
             }
         }
