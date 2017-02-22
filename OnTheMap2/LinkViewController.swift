@@ -76,7 +76,8 @@ class LinkViewController: UIViewController {
                    UdacityNetwork.sharedInstance().postNew(student: userData!, location: location) {success, result in
                         DispatchQueue.main.async{
                             if success {
-                                tabBarController?.dismiss(animated: LinkViewController)
+                               self.storyboard?.instantiateViewController(withIdentifier: "tabBarController")
+                                
                             } else {
                                 UdacityNetwork.sharedInstance().alertError(self, error: self.appDelegate.errorMessage.UpdateError)
                             }
