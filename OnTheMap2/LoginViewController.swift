@@ -70,7 +70,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loginwithUdacity() {
-        UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (success, errormsg, error) in
+        UdacityNetwork.sharedInstance().getUdacityData(username: usernameField.text!, password: passwordField.text!) { (success, errorMessage, error) in
             if success {
                 UdacityNetwork.sharedInstance().getUserData(userID: self.appDelegate.userID) { (success, error) in
                     DispatchQueue.main.async {
@@ -85,7 +85,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             } else {
                 DispatchQueue.main.async {
-                    UdacityNetwork.sharedInstance().alertError(self, error: errormsg!)
+                    UdacityNetwork.sharedInstance().alertError(self, error: errorMessage!)
                     self.indicator.loadingView(false)
                 }
             }

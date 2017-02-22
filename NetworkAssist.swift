@@ -74,6 +74,8 @@ extension UdacityNetwork {
         }
         return false
     }
+    
+}
 
     //Error Messages
 
@@ -85,9 +87,8 @@ struct ErrorMessage {
     let MissingLink = "Need To Enter Link!"
     let CantLogin = "Network Connection Is Offline!"
     let InvalidEmail = "Invalid Email Or Password!"
-}
-    
-}
+
+    }
 
 
 extension UdacityNetwork {
