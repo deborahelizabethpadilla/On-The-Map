@@ -2,7 +2,7 @@
 
 **Summary:**
 
-This application was created specifically for Udacity's iOS Developer Nanodegree program. This application allows users to log in, posting and searching students locations.
+This application was created specifically for [Udacity's iOS Developer Nanodegree program](https://www.Udacity.com). This application allows users to log in, posting and searching students locations.
 
 **The application offers the following features:**
 
