@@ -42,6 +42,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     @IBAction func logout(_ sender: Any) {
         
         UdacityNetwork.sharedInstance().logoutID(controller: self)
+        
+        dismiss(animated: true, completion: {
+            UdacityNetwork.sharedInstance().logoutID(controller: self)
+        })
     }
     
     @IBAction func refreshButton(_ sender: Any) {
