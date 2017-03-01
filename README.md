@@ -27,3 +27,5 @@ This application was created specifically for [Udacity's iOS Developer Nanodegre
 **Closing:**
 
 In conclusion, I have learned a lot by working on this project. I am confident that I mastered API's, MapKit and UINavigationController. I am able to successfully create applications using different scenes, functions and assets in order to create an exciting application.
+
+![otm1](https://cloud.githubusercontent.com/assets/20284373/23474243/1e666440-fe81-11e6-987e-1cd43046e9ad.png) ![otm2](https://cloud.githubusercontent.com/assets/20284373/23474245/1e6f092e-fe81-11e6-8fb9-3e977d30267c.png) ![otm3](https://cloud.githubusercontent.com/assets/20284373/23474244/1e6eae20-fe81-11e6-948d-ebbdd47d9a4c.png)
